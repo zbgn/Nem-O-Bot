@@ -1,0 +1,32 @@
+{
+  "name": "nemobot",
+  "version": "1.0.0",
+  "description": "A Discord Bot for Minstery",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js --ignore songlist.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gysco/Nem-O-Bot.git"
+  },
+  "keywords": [
+    "bot",
+    "discord",
+    "minstery"
+  ],
+  "author": "Gysco",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Gysco/Nem-O-Bot/issues"
+  },
+  "homepage": "https://github.com/Gysco/Nem-O-Bot#readme",
+  "dependencies": {
+    "discord.js": "^11.3.2",
+    "google-spreadsheet": "^2.0.4",
+    "googleapis": "^28.1.0",
+    "nodemon": "^1.17.3",
+    "twitch-js": "^2.0.0-alpha.14"
+  }
+}
