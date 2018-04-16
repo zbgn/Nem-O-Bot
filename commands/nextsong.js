@@ -2,21 +2,26 @@ const fs = require('fs')
 
 module.exports = {
   main: (bot, msg, settings) => {
-    fs.readFile('./songlist.json', (err, data) => {
-      if (err) throw (err)
-      var jsonf = JSON.parse(data)
-      var song = jsonf.songlist.splice(0, 1)
-      fs.writeFile('./songlist.json', JSON.stringify(jsonf), (err) => {
-        if (err) {
-          console.log(err)
-          msg.reply(msg.author.username + ' Error.')
+    if (msg.member.roles.has(msg.guild.roles.find("name", bot.OWNERROLE).id)) {
+      if (bot.songlist.length >= 1) {
+        for (var i = 0, len = bot.songlist.length; i < len; i++) {
+          if (!bot.songlist[i].played) {
+            bot.sendNotification(bot.songlist[i].author, 'info', msg)
+            bot.songlist[i].played = true;
+            break
+          }
+          if (i + 1 == bot.songlist.length) {
+            bot.sendNotification("No more song !", 'info', msg)
+          }
         }
-        msg.reply(' the song is: ' + song[0].song + ' by ' +
-          song[0].author + '; requested by @' + song[0].username)
-      })
-    })
+      } else {
+        bot.sendNotification("No song", 'info', msg)
+      }
+    } else {
+      bot.sendNotification("You do not have permission to use this command. User " + bot.OWNERROLE + "only !", 'error', msg)
+    }
   },
   args: '',
-  help: 'Send a song to the song request list',
+  help: 'Display the nex song (and tag as played).',
   hide: false
 }
