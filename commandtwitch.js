@@ -14,7 +14,7 @@ module.exports = {
       fs.writeFile('./songlist.json', JSON.stringify(jsonf), (err) => {
         if (err) {
           console.log(err)
-          next('@' + user + ' make sure the format is correct. You can also contact @Gysco.')
+          next('@' + user + ' make sure the format is correct: !songrequest <song>, <author>. You can also contact @Gysco.')
         }
         next('@' + user + ' your song as been added to the list.')
       })

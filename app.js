@@ -180,7 +180,7 @@ var checkCommand = function (msg, isMention) {
       msg.content = msg.content.replace(bot.PREFIX + command + ' ', '')
       if (command) commands[command].main(bot, msg)
     } else {
-      msg.channel.send(command + ': unkown')
+      console.log(command + ': unkown')
     }
   }
 }
@@ -258,7 +258,7 @@ client.on('chat', (channel, userstate, message, self) => {
       cmdTV[cmd](userstate['display-name'], message.replace(message.split(' ')[0], '').split(','), (ret) => {
         client.say(channel, ret)
       })
-    } else client.say(channel, 'Unknown command.')
+    } else console.log(cmd +':unknow cmd.')
   }
 })
 
