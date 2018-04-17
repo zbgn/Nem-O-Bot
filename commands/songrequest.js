@@ -1,14 +1,10 @@
 const fs = require('fs')
+const songs = require("../songs")
 
 module.exports = {
   main: (bot, msg, settings) => {
     var content = msg.content.split(',')
-    bot.songlist.push({
-      username: msg.author.username,
-      song: content[0].trim(),
-      author: content[1].trim(),
-      played: false
-    })
+    songs.requested(msg.author.username,content[0].trim(),content[1].trim())
   },
   args: `'<string>' '<string>'`,
   help: 'Send a song to the song request list',

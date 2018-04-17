@@ -1,24 +1,22 @@
 const fs = require('fs')
+const songs = require("../songs")
 
 module.exports = {
   main: (bot, msg, settings) => {
-    if (msg.member.roles.has(msg.guild.roles.find("name", bot.OWNERROLE).id)) {
-      if (bot.songlist.length >= 1) {
-        for (var i = 0, len = bot.songlist.length; i < len; i++) {
-          if (!bot.songlist[i].played) {
-            bot.sendNotification(bot.songlist[i].author, 'info', msg)
-            bot.songlist[i].played = true;
-            break
-          }
-          if (i + 1 == bot.songlist.length) {
-            bot.sendNotification("No more song !", 'info', msg)
-          }
-        }
+    var wantedRole = msg.guild.roles.find("name", bot.OWNERROLE)
+    var roles = msg.member.roles.sort((a, b) => a.position < b.position ? 1 : -1)
+    if (roles.first().calculatedPosition >= wantedRole.calculatedPosition) {
+      
+      var next = songs.next();
+      if (next != "") {
+        bot.sendNotification(next.author + "  " +
+          next.song + "  " +
+          next.username, 'info', msg)
       } else {
         bot.sendNotification("No song", 'info', msg)
       }
     } else {
-      bot.sendNotification("You do not have permission to use this command. User " + bot.OWNERROLE + "only !", 'error', msg)
+      bot.sendNotification("You do not have permission to use this command. User " + bot.OWNERROLE + " and above only !", 'error', msg)
     }
   },
   args: '',

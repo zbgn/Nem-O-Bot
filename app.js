@@ -24,9 +24,6 @@ bot.SUCCESS_COLOR = 0x00ff00
 bot.ERROR_COLOR = 0xff0000
 bot.INFO_COLOR = 0x0000ff
 
-bot.songlist = []
-
-
 String.prototype.padRight = function (l, c) {
   return this + Array(l - this.length + 1).join(c || ' ')
 }
