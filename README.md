@@ -8,6 +8,7 @@ A twitch and Discord bot for [Minstery](http://twitch.tv/minstery)
 {
   "discord": {
     "OWNERID": "YOUR_ID_DISCORD",
+    "OWNERROLE" :"MINIMAL_ROLE",
     "PREFIX": "THE_PREFIX",
     "TOKEN": "YOUR_DISCORD_BOT_TOKEN",
     "live_notification": "https://api.twitch.tv/helix/streams?user_id=USER_ID_TWITCH"
