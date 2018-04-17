@@ -4,7 +4,7 @@ module.exports = {
   songrequest: function (user, msg, next) {
     fs.readFile('./songlist.json', (err, data) => {
       if (err) throw (err)
-      if (msg.length() !== 2) next('@' + user + ' make sure the format is correct. You can also contact @Gysco.')
+      if (msg.length !== 2) next('@' + user + ' make sure the format is correct: !songrequest <song>, <author>. You can also contact @Gysco.')
       var jsonf = JSON.parse(data)
       jsonf.songlist.push({
         username: user + '[TWITCH]',
