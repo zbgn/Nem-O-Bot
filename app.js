@@ -14,6 +14,7 @@ var bot = new Discord.Client({
 bot.OWNERID = config.discord.OWNERID
 bot.PREFIX = config.discord.PREFIX
 bot.TOKEN = config.discord.TOKEN
+bot.OWNERROLE = config.discord.OWNERROLE
 
 bot.DETAILED_LOGGING = false
 bot.DELETE_COMMANDS = false
@@ -22,6 +23,9 @@ bot.COLOR = 0x351C75
 bot.SUCCESS_COLOR = 0x00ff00
 bot.ERROR_COLOR = 0xff0000
 bot.INFO_COLOR = 0x0000ff
+
+bot.songlist = []
+
 
 String.prototype.padRight = function (l, c) {
   return this + Array(l - this.length + 1).join(c || ' ')
@@ -209,7 +213,12 @@ bot.setInterval(() => {
 
 bot.on('ready', () => {
   console.log('Ready to begin! Serving in ' + bot.guilds.array().length + ' servers.')
-  bot.user.setStatus('online', '')
+  bot.user.setPresence({
+    game: {
+      name: '?help - message @Gysco#1337'
+    },
+    status: 'online'
+  }).then(console.log).catch(console.error)
   loadCommands()
 })
 
@@ -243,8 +252,7 @@ const optionsTV = config.twitch
 const client = new TwitchJS.client(optionsTV)
 
 client.on('chat', (channel, userstate, message, self) => {
-  console
-    .log(`Message '${message}' received from ${userstate['display-name']}`)
+  console.log(`Message '${message}' received from ${userstate['display-name']}`)
 
   if (self) return
   if (optionsTV.identity && message.startsWith('!')) {
