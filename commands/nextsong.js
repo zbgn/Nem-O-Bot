@@ -1,22 +1,25 @@
 const fs = require('fs')
+const songs = require("../songs")
 
 module.exports = {
   main: (bot, msg, settings) => {
-    fs.readFile('./songlist.json', (err, data) => {
-      if (err) throw (err)
-      var jsonf = JSON.parse(data)
-      var song = jsonf.songlist.splice(0, 1)
-      fs.writeFile('./songlist.json', JSON.stringify(jsonf), (err) => {
-        if (err) {
-          console.log(err)
-          msg.reply(msg.author.username + ' Error.')
-        }
-        msg.reply(' the song is: ' + song[0].song + ' by ' +
-          song[0].author + '; requested by @' + song[0].username)
-      })
-    })
+    var wantedRole = msg.guild.roles.find("name", bot.OWNERROLE)
+    var roles = msg.member.roles.sort((a, b) => a.position < b.position ? 1 : -1)
+    if (roles.first().calculatedPosition >= wantedRole.calculatedPosition) {
+      
+      var next = songs.next();
+      if (next != "") {
+        bot.sendNotification(next.author + "  " +
+          next.song + "  " +
+          next.username, 'info', msg)
+      } else {
+        bot.sendNotification("No song", 'info', msg)
+      }
+    } else {
+      bot.sendNotification("You do not have permission to use this command. User " + bot.OWNERROLE + " and above only !", 'error', msg)
+    }
   },
   args: '',
-  help: 'Display the nex song (and remove it form the list).',
+  help: 'Display the nex song (and tag as played).',
   hide: false
 }

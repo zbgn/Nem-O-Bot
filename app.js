@@ -14,6 +14,7 @@ var bot = new Discord.Client({
 bot.OWNERID = config.discord.OWNERID
 bot.PREFIX = config.discord.PREFIX
 bot.TOKEN = config.discord.TOKEN
+bot.OWNERROLE = config.discord.OWNERROLE
 
 bot.DETAILED_LOGGING = false
 bot.DELETE_COMMANDS = false
@@ -248,8 +249,7 @@ const optionsTV = config.twitch
 const client = new TwitchJS.client(optionsTV)
 
 client.on('chat', (channel, userstate, message, self) => {
-  console
-    .log(`Message '${message}' received from ${userstate['display-name']}`)
+  console.log(`Message '${message}' received from ${userstate['display-name']}`)
 
   if (self) return
   if (optionsTV.identity && message.startsWith('!')) {
