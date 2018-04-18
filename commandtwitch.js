@@ -1,24 +1,31 @@
 const fs = require('fs')
 const http = require('http')
+const utils = require('./utils/songSimilarity')
 
 module.exports = {
   songrequest: function (channel, user, msg, next) {
     fs.readFile('./songlist.json', (err, data) => {
-      if (!err) {
-        if (msg.length !== 2) next('@' + user + ' make sure the format is correct: !songrequest <song>, <author>. You can also contact @Gysco.')
+      if (!err && msg.length === 2) {
         var jsonf = JSON.parse(data)
-        jsonf.songlist.push({
-          username: user + '[TWITCH]',
-          song: msg[0].trim(),
-          author: msg[1].trim()
+        utils.getSong(msg[0].trim(), msg[1].trim(), (author, music) => {
+          console.log(author, music, !author && !music)
+          if (author) {
+            jsonf.songlist.push({
+              username: user + '[TWITCH]',
+              song: music,
+              author: author
+            })
+            fs.writeFile('./songlist.json', JSON.stringify(jsonf), (err) => {
+              if (err) {
+                console.log(err)
+                next('@' + user + ' make sure the format is correct: !songrequest <song>, <author>. You can also contact @Gysco.')
+              }
+              next('@' + user + ' your song as been added to the list.')
+            })
+          } else if (!author && !music) next('@' + user + ' make sure the song is in the list (!musicstream).')
         })
-        fs.writeFile('./songlist.json', JSON.stringify(jsonf), (err) => {
-          if (err) {
-            console.log(err)
-            next('@' + user + ' make sure the format is correct: !songrequest <song>, <author>. You can also contact @Gysco.')
-          }
-          next('@' + user + ' your song as been added to the list.')
-        })
+      } else if (msg.length !== 2) {
+        next('@' + user + ' make sure the format is correct: !songrequest <song>, <author>. You can also contact @Gysco.')
       } else console.log(err)
     })
   },
