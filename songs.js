@@ -1,12 +1,12 @@
-const songsAvailable = require('utils/musicstream.json')
-const stringSimilarity = require('string-similarity');
+const songsAvailable = require('./utils/musicstream.json')
+const stringSimilarity = require('string-similarity')
 module.exports = {
   requested: (username, song, author) => {
-    bestMatchAuthor = stringSimilarity.findBestMatch(author, Object.keys(songsAvailable)).bestMatch
+    var bestMatchAuthor = stringSimilarity.findBestMatch(author, Object.keys(songsAvailable)).bestMatch
     if (bestMatchAuthor.rating >= 0.5) {
-      bestMatchSong = stringSimilarity.findBestMatch(song, songsAvailable[bestMatchAuthor.target]).bestMatch
+      var bestMatchSong = stringSimilarity.findBestMatch(song, songsAvailable[bestMatchAuthor.target]).bestMatch
       if (bestMatchSong.rating >= 0.5) {
-        requestSong = {
+        var requestSong = {
           username: username,
           song: song,
           author: author,
@@ -58,10 +58,6 @@ module.exports = {
 var songRequested = []
 var songProposed = []
 
-
 function contain(newSong, song) {
-  if (newSong.song === song.song && newSong.author === song.author) {
-    return true;
-  }
-  return false;
+  return (newSong.song === song.song && newSong.author === song.author)
 }
