@@ -1,4 +1,4 @@
-const songsAvailable = require('./musicstream.json')
+const songsAvailable = require('utils/musicstream.json')
 const stringSimilarity = require('string-similarity');
 module.exports = {
   requested: (username, song, author) => {
