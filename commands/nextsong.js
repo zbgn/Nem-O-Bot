@@ -6,8 +6,8 @@ module.exports = {
     var roles = msg.member.roles.sort((a, b) => a.position < b.position ? 1 : -1)
     if (roles.first().calculatedPosition >= wantedRole.calculatedPosition) {
       var nextsong = songs.next()
-      if (nextsong !== '') {
-        bot.sendNotification(nextsong.author + '  ' + nextsong.song + '  ' + nextsong.username, 'info', msg)
+      if (nextsong !== null) {
+        bot.sendNotification(nextsong.author + '  ' + nextsong.song + '  ' + nextsong.username + '  ' + nextsong.requested , 'info', msg)
       } else {
         bot.sendNotification('No song', 'info', msg)
       }
