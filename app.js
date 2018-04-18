@@ -212,7 +212,7 @@ bot.on('ready', () => {
   console.log('Ready to begin! Serving in ' + bot.guilds.array().length + ' servers.')
   bot.user.setPresence({
     game: {
-      name: '?help - message @Gysco#1337'
+      name: bot.PREFIX + 'help - message @Gysco#1337'
     },
     status: 'online'
   }).then(console.log).catch(console.error)
@@ -255,10 +255,11 @@ client.on('chat', (channel, userstate, message, self) => {
   if (optionsTV.identity && message.startsWith('!')) {
     var cmd = message.split(' ')[0].replace('!', '')
     if (cmd in cmdTV) {
-      cmdTV[cmd](userstate['display-name'], message.replace(message.split(' ')[0], '').split(','), (ret) => {
+      var msg = message.replace(message.split(' ')[0], '').split(',')
+      cmdTV[cmd](channel, userstate['display-name'], msg, (ret) => {
         client.say(channel, ret)
       })
-    } else console.log(cmd +':unknow cmd.')
+    } else console.log(cmd + ':unknow cmd.')
   }
 })
 

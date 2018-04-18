@@ -25,6 +25,7 @@
   "dependencies": {
     "discord.js": "^11.3.2",
     "nodemon": "^1.17.3",
+    "string-similarity": "^1.2.0",
     "twitch-js": "^2.0.0-alpha.14"
   }
 }
