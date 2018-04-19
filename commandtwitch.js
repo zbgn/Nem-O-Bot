@@ -6,8 +6,7 @@ function getMostRequested(jsonf) {
   var index = 0
   if (jsonf.songlist.length === 0) return -1
   for (var i = 0; i < jsonf.songlist.length; i++) {
-    console.log('getMostRequested', jsonf.songlist[index].requests, jsonf.songlist[i].requests, jsonf.songlist[index].requests < jsonf.songlist[i].requests)
-    if (jsonf.songlist[index].requests < jsonf.songlist[i].requests) index = i
+    if (!jsonf.songlist[i].played && jsonf.songlist[index].requests < jsonf.songlist[i].requests) index = i
   }
   jsonf.songlist[index].played = true
   return index
@@ -17,7 +16,7 @@ function updateJSON(user, author, music, jsonf) {
   for (var i = 0; i < jsonf.songlist.length; i++) {
     if (jsonf.songlist[i].song === music && jsonf.songlist[i].author === author) {
       jsonf.songlist[i].requests = (!jsonf.songlist[i].played ? jsonf.songlist[i].requests + 1 : jsonf.songlist[i].requests)
-      return
+      return (jsonf.songlist[i].played ? ' the song has already been played.' : ' the song ' + music + ', ' + author + ' has now ' + jsonf.songlist[i].requests + ' requests')
     }
   }
   jsonf.songlist.push({
@@ -27,6 +26,7 @@ function updateJSON(user, author, music, jsonf) {
     played: false,
     requests: 1
   })
+  return ' your song as been added to the list.'
 }
 
 module.exports = {
@@ -36,14 +36,14 @@ module.exports = {
         var jsonf = JSON.parse(data)
         utils.getSong(msg[0].trim(), msg[1].trim(), (author, music) => {
           if (author) {
-            updateJSON(user, author, music, jsonf)
+            var updatedString = updateJSON(user, author, music, jsonf)
             fs.writeFile('./songlist.json', JSON.stringify(jsonf), (err) => {
               if (err) {
                 console.log(err)
                 next('@' + user + ' make sure the format is correct: !songrequest <song>, <author>. You can also contact @Gysco.')
-              } else next('@' + user + ' your song as been added to the list.')
+              } else next('@' + user + updatedString)
             })
-          } else if (!author && !music) next('@' + user + ' make sure the song is in the list (!musicstream).')
+          } else next('@' + user + ' make sure the song is in the list (!musicstream).')
         })
       } else if (msg.length !== 2) {
         next('@' + user + ' make sure the format is correct: !songrequest <song>, <author>. You can also contact @Gysco.')

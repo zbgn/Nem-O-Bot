@@ -198,10 +198,10 @@ bot.setInterval(() => {
     if (!error && response.statusCode === 200) {
       console.log('sucess!')
       var jsonres = JSON.parse(body)
-      if (jsonres.body && !bot.liveDisplayed) {
+      if (jsonres.data.length && !bot.liveDisplayed) {
         bot.liveDisplayed = true
         bot.message.guild.channels.find('name', 'general').sendMessage('@everyone, @Minstery just went live! http://twitch.tv/minestry')
-      } else if (!jsonres.body) bot.liveDisplayed = false
+      } else if (!jsonres.data.length) bot.liveDisplayed = false
     } else {
       console.log('error ' + response.statusCode)
     }
