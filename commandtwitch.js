@@ -2,25 +2,46 @@ const fs = require('fs')
 // const http = require('http')
 const utils = require('./utils/songSimilarity')
 
+function getMostRequested(jsonf) {
+  var index = 0
+  if (jsonf.songlist.length === 0) return -1
+  for (var i = 0; i < jsonf.songlist.length; i++) {
+    console.log('getMostRequested', jsonf.songlist[index].requests, jsonf.songlist[i].requests, jsonf.songlist[index].requests < jsonf.songlist[i].requests)
+    if (jsonf.songlist[index].requests < jsonf.songlist[i].requests) index = i
+  }
+  jsonf.songlist[index].played = true
+  return index
+}
+
+function updateJSON(user, author, music, jsonf) {
+  for (var i = 0; i < jsonf.songlist.length; i++) {
+    if (jsonf.songlist[i].song === music && jsonf.songlist[i].author === author) {
+      jsonf.songlist[i].requests = (!jsonf.songlist[i].played ? jsonf.songlist[i].requests + 1 : jsonf.songlist[i].requests)
+      return
+    }
+  }
+  jsonf.songlist.push({
+    username: user + '[TWITCH]',
+    song: music,
+    author: author,
+    played: false,
+    requests: 1
+  })
+}
+
 module.exports = {
   songrequest: function (channel, user, msg, next) {
     fs.readFile('./songlist.json', (err, data) => {
       if (!err && msg.length === 2) {
         var jsonf = JSON.parse(data)
         utils.getSong(msg[0].trim(), msg[1].trim(), (author, music) => {
-          console.log(author, music, !author && !music)
           if (author) {
-            jsonf.songlist.push({
-              username: user + '[TWITCH]',
-              song: music,
-              author: author
-            })
+            updateJSON(user, author, music, jsonf)
             fs.writeFile('./songlist.json', JSON.stringify(jsonf), (err) => {
               if (err) {
                 console.log(err)
                 next('@' + user + ' make sure the format is correct: !songrequest <song>, <author>. You can also contact @Gysco.')
-              }
-              next('@' + user + ' your song as been added to the list.')
+              } else next('@' + user + ' your song as been added to the list.')
             })
           } else if (!author && !music) next('@' + user + ' make sure the song is in the list (!musicstream).')
         })
@@ -45,17 +66,16 @@ module.exports = {
         //     })
         //   })
         // }, 1800000)
-        if (user.toLowerCase() === channel.replace('#', '') || user.toLowerCase() === 'gysco' || user.toLowerCase() === '_stagma') {
+        if (user.toLowerCase() === channel.replace('#', '') || user.toLowerCase() === 'minstery' || user.toLowerCase() === 'gysco' || user.toLowerCase() === '_stagma') {
           var jsonf = JSON.parse(data)
-          var song = jsonf.songlist.splice(0, 1)
-          if (song.length === 0) return
+          var song = getMostRequested(jsonf)
+          if (song === -1) return
+          var songDisplay = jsonf.songlist[song]
           fs.writeFile('./songlist.json', JSON.stringify(jsonf), (err) => {
             if (err) {
               console.log(err)
               next('@' + user + ' Error.')
-            }
-            next('@' + user + ' the song is: ' + song[0].song + ' by ' +
-              song[0].author + '; requested by @' + song[0].username)
+            } else next('@' + user + ' the song is: ' + songDisplay.song + ' by ' + songDisplay.author + '; requested by @' + songDisplay.username)
           })
         }
       } else console.log(err)
