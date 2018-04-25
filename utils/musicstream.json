@@ -2,6 +2,9 @@
   "A-ha": [
     "Take on me"
   ],
+  "Alestorm": [
+    "Nancy the tavern wrench"
+  ],
   "Amy McDonald": [
     "This is the life"
   ],
@@ -30,6 +33,9 @@
   ],
   "Blues Brothers": [
     "Sweet Home Chicago"
+  ],
+  "La belle et la bête": [
+    "L'histoire éternelle"
   ],
   "Bob Marley": [
     "Redemption Song",
@@ -149,7 +155,8 @@
     "Hanging tree"
   ],
   "Imagine Dragons": [
-    "Radioactive"
+    "Radioactive",
+    "Believer"
   ],
   "Indochine": [
     "J 'ai demandé à la lune"
@@ -250,6 +257,12 @@
   "Nino Ferrer": [
     "Le Sud"
   ],
+  "Nirvana": [
+    "Come as you are"
+  ],
+  "Paramore": [
+    "Hard Times"
+  ],
   "OMI": [
     "Cheerleader"
   ],
@@ -264,9 +277,6 @@
   ],
   "Panic!At the disco": [
     "This is gospel"
-  ],
-  "Paramore": [
-    "Hard Times"
   ],
   "Pep's": [
     "Liberta"
@@ -299,8 +309,14 @@
     "Not Over You Sorry",
     "I 'm not sorry"
   ],
+  "Tété": [
+    "A la faveur de l'automne"
+  ],
   "The Animals": [
     "House of the Rising Sun"
+  ],
+  "The Last of Us": [
+    "Through the Valley"
   ],
   "The White Stripes": [
     "Seven Nation Army"
@@ -336,7 +352,8 @@
     "Hanging tree"
   ],
   "VARIOUS ARTIST": [
-    "Diga Diga Doo"
+    "Diga Diga Doo",
+    "Bella ciao"
   ],
   "Vance Joy": [
     "Riptide"
