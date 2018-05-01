@@ -26,6 +26,7 @@
     "discord.js": "^11.3.2",
     "hoek": "^5.0.3",
     "nodemon": "^1.17.3",
+    "request": "^2.85.0",
     "string-similarity": "^1.2.0",
     "twitch-js": "^2.0.0-alpha.18"
   }
