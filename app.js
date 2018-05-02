@@ -4,6 +4,9 @@ const request = require('request')
 const Discord = require('discord.js')
 const path = require('path')
 const fs = require('fs')
+var raven = require('raven')
+
+raven.config('https://6b2c5a567e1b4c488d8ac5489d585268@sentry.io/1200092').install()
 
 var config = JSON.parse(fs.readFileSync('./config.json'))
 
