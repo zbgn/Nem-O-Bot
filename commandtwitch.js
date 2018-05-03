@@ -58,7 +58,7 @@ function songrequester(channel, user, msg, next) {
 
 function getrequest(user, data, isPleb, next) {
   var jsonf = JSON.parse(data)
-  var song = getMostRequested(jsonf, true)
+  var song = getMostRequested(jsonf, isPleb)
   if (song === -1) return
   var songDisplay = jsonf.songlist[song]
   fs.writeFile('./songlist.json', JSON.stringify(jsonf), (err) => {
