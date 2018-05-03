@@ -4,7 +4,7 @@
   "description": "A Discord Bot for Minstery",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js --ignore songlist.json",
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -26,6 +26,7 @@
     "discord.js": "^11.3.2",
     "hoek": "^5.0.3",
     "nodemon": "^1.17.3",
+    "raven": "^2.6.0",
     "request": "^2.85.0",
     "string-similarity": "^1.2.0",
     "twitch-js": "^2.0.0-alpha.18"
