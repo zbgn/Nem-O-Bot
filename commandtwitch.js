@@ -3,12 +3,23 @@ const fs = require('fs')
 const utils = require('./utils/songSimilarity')
 var config = JSON.parse(fs.readFileSync('./config.json'))
 
-function getMostRequested(jsonf, isPleb) {
+function getCurrent(jsonf) {
   var index = 0
   if (jsonf.songlist.length === 0) return -1
   for (var i = 0; i < jsonf.songlist.length; i++) {
+    if (!jsonf.songlist[i].current) index = i
+  }
+  return index
+}
+
+function getMostRequested(jsonf, isPleb) {
+  var index = 0
+  if (jsonf.songlist.length === 0) return -1
+  jsonf[getCurrent(jsonf)].current = isPleb
+  for (var i = 0; i < jsonf.songlist.length; i++) {
     if (!jsonf.songlist[i].played && jsonf.songlist[index].requests < jsonf.songlist[i].requests) index = i
   }
+  jsonf.songlist[index].current = !isPleb
   jsonf.songlist[index].played = !isPleb
   jsonf.songlist[index].requests = isPleb ? jsonf.songlist[index].requests : -1
   return index
@@ -30,6 +41,7 @@ function updateJSON(user, author, music, jsonf) {
     song: music,
     author: author,
     played: false,
+    current: false,
     requests: 1
   })
   return ' your song as been added to the list.'
@@ -112,8 +124,24 @@ function clearlist(channel, user, msg, next) {
 }
 
 function nem(channel, user, msg, next) {
-  if (msg) next('@' + msg + ' is a nem. minsteDerp')
+  if (msg[0]) next('@' + msg[0].trim() + ' is a nem. minsteDerp')
   else next('@' + user + ' is a nem. minsteDerp')
+}
+
+function currentsong(channel, user, msg, next) {
+  var i = 0
+  fs.readFile('./songlist.json', (err, data) => {
+    if (!err) {
+      const jsonf = JSON.parse(data)
+      if (user.toLowerCase() === channel.replace('#', '') || config.twitch_config.mods.indexOf(user.toLowerCase()) >= 0) {
+        i = getCurrent(jsonf)
+      } else {
+        i = getCurrent(jsonf)
+      }
+      const music = jsonf.songlist[i]
+      next('@' + user + ' the current song is: ' + music.song + ' by ' + music.author)
+    } else console.log(err)
+  })
 }
 
 module.exports = {
@@ -123,5 +151,7 @@ module.exports = {
   ns: nextsong,
   clearlist: clearlist,
   cl: clearlist,
-  nem: nem
+  nem: nem,
+  currentsong: currentsong,
+  cs: currentsong
 }
