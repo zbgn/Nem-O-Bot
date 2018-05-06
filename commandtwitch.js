@@ -112,7 +112,8 @@ function clearlist(channel, user, msg, next) {
 }
 
 function nem(channel, user, msg, next) {
-  next('@' + user + ' is a nem. minsteDerp')
+  if (msg) next('@' + msg + ' is a nem. minsteDerp')
+  else next('@' + user + ' is a nem. minsteDerp')
 }
 
 module.exports = {
