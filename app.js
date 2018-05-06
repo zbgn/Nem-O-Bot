@@ -256,7 +256,7 @@ const optionsTV = config.twitch
 const client = new TwitchJS.client(optionsTV)
 
 client.on('chat', (channel, userstate, message, self) => {
-  console.log(`Message '${message}' received from ${userstate['display-name']}`)
+  console.log(`#${channel}: ${userstate['display-name']} => '${message}'`)
 
   if (self) return
   if (optionsTV.identity && message.startsWith('!')) {
