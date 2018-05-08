@@ -15,7 +15,7 @@ function getCurrent(jsonf) {
 function getMostRequested(jsonf, isPleb) {
   var index = 0
   if (jsonf.songlist.length === 0) return -1
-  jsonf[getCurrent(jsonf)].current = isPleb
+  if (getCurrent(jsonf)) jsonf.songlist[getCurrent(jsonf)].current = isPleb
   for (var i = 0; i < jsonf.songlist.length; i++) {
     if (!jsonf.songlist[i].played && jsonf.songlist[index].requests < jsonf.songlist[i].requests) index = i
   }
@@ -57,13 +57,13 @@ function songrequester(channel, user, msg, next) {
           fs.writeFile('./songlist.json', JSON.stringify(jsonf), (err) => {
             if (err) {
               console.log(err)
-              next('@' + user + ' make sure the format is correct: !songrequest <song>, <author>. You can also contact @Gysco.')
+              next('@' + user + ' make sure the format is correct: !songrequest <song> - <author>. You can also contact @Gysco.')
             } else next('@' + user + updatedString)
           })
         } else next('@' + user + ' make sure the song is in the list (!musicstream).')
       })
     } else if (msg.length !== 2) {
-      next('@' + user + ' make sure the format is correct: !songrequest <song>, <author>. You can also contact @Gysco.')
+      next('@' + user + ' make sure the format is correct: !songrequest <song> - <author>. You can also contact @Gysco.')
     } else console.log(err)
   })
 }

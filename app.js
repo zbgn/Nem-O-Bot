@@ -262,7 +262,7 @@ client.on('chat', (channel, userstate, message, self) => {
   if (optionsTV.identity && message.startsWith('!')) {
     var cmd = message.split(' ')[0].replace('!', '')
     if (cmd in cmdTV) {
-      var msg = message.replace(message.split(' ')[0], '').split(',')
+      var msg = message.replace(message.split(' ')[0], '').split('-')
       cmdTV[cmd](channel, userstate['display-name'], msg, (ret) => {
         client.say(channel, ret)
       })
