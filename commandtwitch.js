@@ -7,7 +7,7 @@ function getCurrent(jsonf) {
   var index = 0
   if (jsonf.songlist.length === 0) return -1
   for (var i = 0; i < jsonf.songlist.length; i++) {
-    if (!jsonf.songlist[i].current) index = i
+    if (jsonf.songlist[i].current) index = i
   }
   return index
 }
@@ -129,15 +129,10 @@ function nem(channel, user, msg, next) {
 }
 
 function currentsong(channel, user, msg, next) {
-  var i = 0
   fs.readFile('./songlist.json', (err, data) => {
     if (!err) {
       const jsonf = JSON.parse(data)
-      if (user.toLowerCase() === channel.replace('#', '') || config.twitch_config.mods.indexOf(user.toLowerCase()) >= 0) {
-        i = getCurrent(jsonf)
-      } else {
-        i = getCurrent(jsonf)
-      }
+      var i = getCurrent(jsonf)
       const music = jsonf.songlist[i]
       next('@' + user + ' the current song is: ' + music.song + ' by ' + music.author)
     } else console.log(err)
