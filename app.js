@@ -256,12 +256,12 @@ const optionsTV = config.twitch
 const client = new TwitchJS.client(optionsTV)
 
 client.on('chat', (channel, userstate, message, self) => {
-  console.log(`#${channel}: ${userstate['display-name']} => '${message}'`)
+  console.log(`${channel}: ${userstate['display-name']} => '${message}'`)
 
   if (self) return
   if (optionsTV.identity && message.startsWith('!')) {
     var cmd = message.split(' ')[0].replace('!', '')
-    if (cmd in cmdTV) {
+    if (cmd.toLowerCase() in cmdTV) {
       var msg = message.replace(message.split(' ')[0], '').split('-')
       cmdTV[cmd](channel, userstate['display-name'], msg, (ret) => {
         client.say(channel, ret)

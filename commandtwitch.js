@@ -15,7 +15,7 @@ function getCurrent(jsonf) {
 function getMostRequested(jsonf, isPleb) {
   var index = 0
   if (jsonf.songlist.length === 0) return -1
-  if (getCurrent(jsonf)) jsonf.songlist[getCurrent(jsonf)].current = isPleb
+  jsonf.songlist[getCurrent(jsonf)].current = isPleb
   for (var i = 0; i < jsonf.songlist.length; i++) {
     if (!jsonf.songlist[i].played && jsonf.songlist[index].requests < jsonf.songlist[i].requests) index = i
   }
@@ -133,8 +133,12 @@ function currentsong(channel, user, msg, next) {
     if (!err) {
       const jsonf = JSON.parse(data)
       var i = getCurrent(jsonf)
-      const music = jsonf.songlist[i]
-      next('@' + user + ' the current song is: ' + music.song + ' by ' + music.author)
+      if (i >= 0) {
+        const music = jsonf.songlist[i]
+        next('@' + user + ' the current song is: ' + music.song + ' by ' + music.author)
+      } else {
+        next('@' + user + ' there is no current song.')
+      }
     } else console.log(err)
   })
 }
