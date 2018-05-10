@@ -3,6 +3,10 @@ const fs = require('fs')
 const utils = require('./utils/songSimilarity')
 var config = JSON.parse(fs.readFileSync('./config.json'))
 
+function isAdmin(user, channel) {
+  return (user.toLowerCase() === channel.replace('#', '') || config.twitch_config.mods.indexOf(user.toLowerCase()) >= 0)
+}
+
 function getCurrent(jsonf) {
   var index = 0
   if (jsonf.songlist.length === 0) return -1
@@ -17,7 +21,7 @@ function getMostRequested(jsonf, isPleb) {
   if (jsonf.songlist.length === 0) return -1
   jsonf.songlist[getCurrent(jsonf)].current = isPleb
   for (var i = 0; i < jsonf.songlist.length; i++) {
-    if (!jsonf.songlist[i].played && jsonf.songlist[index].requests < jsonf.songlist[i].requests) index = i
+    if (!jsonf.songlist[i].played && !jsonf.songlist[i].disable && jsonf.songlist[index].requests < jsonf.songlist[i].requests) index = i
   }
   jsonf.songlist[index].current = !isPleb
   jsonf.songlist[index].played = !isPleb
@@ -25,26 +29,31 @@ function getMostRequested(jsonf, isPleb) {
   return index
 }
 
-function updateJSON(user, author, music, jsonf) {
+function updateJSON(user, author, music, jsonf, disable) {
   for (var i = 0; i < jsonf.songlist.length; i++) {
     if (jsonf.songlist[i].song === music && jsonf.songlist[i].author === author && jsonf.songlist[i].username.indexOf(user) >= 0) {
-      return (' you already requested this song.')
+      return ' you already requested this song.'
+    }
+    if (jsonf.songlist[i].song === music && jsonf.songlist[i].author === author && jsonf.songlist[i].disable) {
+      return ' the song is disable for the stream.'
     }
     if (jsonf.songlist[i].song === music && jsonf.songlist[i].author === author && jsonf.songlist[i].username.indexOf(user) < 0) {
+      jsonf.songlist[i].disable = disable
       jsonf.songlist[i].username.push(user)
       jsonf.songlist[i].requests = (!jsonf.songlist[i].played ? jsonf.songlist[i].requests + 1 : jsonf.songlist[i].requests)
-      return (jsonf.songlist[i].played ? ' the song has already been played.' : ' the song ' + music + ', ' + author + ' has now ' + jsonf.songlist[i].requests + ' requests')
+      return (jsonf.songlist[i].played ? ' the song has already been played.' : (disable ? ' the song ' + music + ', ' + author + ' is disable.' : ' the song ' + music + ', ' + author + ' has now ' + jsonf.songlist[i].requests + ' requests'))
     }
   }
   jsonf.songlist.push({
     username: [user],
     song: music,
     author: author,
-    played: false,
+    played: disable,
     current: false,
-    requests: 1
+    requests: disable ? -1 : 1,
+    disable: disable
   })
-  return ' your song as been added to the list.'
+  return disable ? 'the song has been disabled.' : ' your song as been added to the list.'
 }
 
 function songrequester(channel, user, msg, next) {
@@ -53,7 +62,7 @@ function songrequester(channel, user, msg, next) {
       var jsonf = JSON.parse(data)
       utils.getSong(msg[0].trim(), msg[1].trim(), (author, music) => {
         if (author) {
-          var updatedString = updateJSON(user, author, music, jsonf)
+          var updatedString = updateJSON(user, author, music, jsonf, false)
           fs.writeFile('./songlist.json', JSON.stringify(jsonf), (err) => {
             if (err) {
               console.log(err)
@@ -97,7 +106,7 @@ function nextsong(channel, user, msg, next) {
       //     })
       //   })
       // }, 1800000)
-      if (user.toLowerCase() === channel.replace('#', '') || config.twitch_config.mods.indexOf(user.toLowerCase()) >= 0) {
+      if (isAdmin(user, channel)) {
         getrequest(user, data, false, next)
       } else {
         getrequest(user, data, true, next)
@@ -109,7 +118,7 @@ function nextsong(channel, user, msg, next) {
 function clearlist(channel, user, msg, next) {
   fs.readFile('./songlist.json', (err, data) => {
     if (!err) {
-      if (user.toLowerCase() === channel.replace('#', '') || config.twitch_config.mods.indexOf(user.toLowerCase()) >= 0) {
+      if (isAdmin(user, channel)) {
         var jsonf = JSON.parse(data)
         jsonf.songlist.length = 0
         fs.writeFile('./songlist.json', JSON.stringify(jsonf), (err) => {
@@ -143,6 +152,31 @@ function currentsong(channel, user, msg, next) {
   })
 }
 
+function disable(channel, user, msg, next) {
+  if (isAdmin(user, channel)) {
+    fs.readFile('./songlist.json', (err, data) => {
+      if (!err && msg.length === 2) {
+        var jsonf = JSON.parse(data)
+        utils.getSong(msg[0].trim(), msg[1].trim(), (author, music) => {
+          if (author) {
+            var updatedString = updateJSON(user, author, music, jsonf, true)
+            fs.writeFile('./songlist.json', JSON.stringify(jsonf), (err) => {
+              if (err) {
+                console.log(err)
+                next('@' + user + ' make sure the format is correct: !songrequest <song> - <author>. You can also contact @Gysco.')
+              } else next('@' + user + updatedString)
+            })
+          } else next('@' + user + ' make sure the song is in the list (!musicstream).')
+        })
+      } else if (msg.length !== 2) {
+        next('@' + user + ' make sure the format is correct: !songrequest <song> - <author>. You can also contact @Gysco.')
+      } else console.log(err)
+    })
+  } else {
+    next('@' + user + ' you are not permitted to disable a song.')
+  }
+}
+
 module.exports = {
   songrequest: songrequester,
   sr: songrequester,
@@ -152,5 +186,6 @@ module.exports = {
   cl: clearlist,
   nem: nem,
   currentsong: currentsong,
-  cs: currentsong
+  cs: currentsong,
+  disable: disable
 }

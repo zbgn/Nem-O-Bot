@@ -63,3 +63,5 @@ typings/
 config.json
 .DS_Store
 .jshintrc
+
+songlist.json
