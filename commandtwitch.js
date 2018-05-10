@@ -32,7 +32,7 @@ function getMostRequested(jsonf, isPleb) {
 function updateJSON(user, author, music, jsonf, disable) {
   for (var i = 0; i < jsonf.songlist.length; i++) {
     if (jsonf.songlist[i].song === music && jsonf.songlist[i].author === author && jsonf.songlist[i].username.indexOf(user) >= 0) {
-      return ' you already requested this song.'
+      return jsonf.songlist[i].disable ? ' the song is disable for the stream.' : ' you already requested this song.'
     }
     if (jsonf.songlist[i].song === music && jsonf.songlist[i].author === author && jsonf.songlist[i].disable) {
       return ' the song is disable for the stream.'
