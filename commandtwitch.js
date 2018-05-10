@@ -53,7 +53,7 @@ function updateJSON(user, author, music, jsonf, disable) {
     requests: disable ? -1 : 1,
     disable: disable
   })
-  return disable ? 'the song has been disabled.' : ' your song as been added to the list.'
+  return disable ? ' the song has been disabled.' : ' your song as been added to the list.'
 }
 
 function songrequester(channel, user, msg, next) {
