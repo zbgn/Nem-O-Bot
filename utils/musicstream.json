@@ -11,6 +11,9 @@
   "Angus & Julia Stone": [
     "Santa Monica Dream"
   ],
+  "Anna Kendrick": [
+    "Cups (When I'm Gone)"
+  ],
   "Artic Monkeys": [
     "Do I wanna know ?"
   ],
@@ -36,9 +39,6 @@
   ],
   "Blues Brothers": [
     "Sweet Home Chicago"
-  ],
-  "La belle et la bête": [
-    "L'histoire éternelle"
   ],
   "Bob Marley": [
     "Redemption Song"
@@ -75,17 +75,20 @@
     "Ain 't no rest for the wicked",
     "Too late to say goodbye"
   ],
+  "Camilla Cabello": [
+    "Havana"
+  ],
   "Cavetown": [
     "This is home",
     "Lemon boy"
+  ],
+  "Cecilia Krull": [
+    "My life is going on"
   ],
   "Charlie Winston": [
     "Like a hobo",
     "I love your smile",
     "Kick the bucket"
-  ],
-  "Cecilia Krull": [
-    "My life is going on"
   ],
   "Chris Isaac": [
     "Wicked Game"
@@ -216,6 +219,9 @@
   "Kyo": [
     "Dernière danse"
   ],
+  "La belle et la bête": [
+    "L'histoire éternelle"
+  ],
   "La la land": [
     "City of stars"
   ],
@@ -274,27 +280,21 @@
     "Bang Bang",
     "These boots are made for walking"
   ],
-  "Nino Ferrer": [
-    "Le Sud"
-  ],
   "Neil Diamond": [
     "Sweet Caroline"
+  ],
+  "Nino Ferrer": [
+    "Le Sud"
   ],
   "Nirvana": [
     "Come as you are"
   ],
-  "Paramore": [
-    "Hard Times"
-  ],
-  "Portal": [
-    "Still alive"
+  "OMI": [
+    "Cheerleader"
   ],
   "Oasis": [
     "Wonderwall",
     "Don't look back in anger"
-  ],
-  "OMI": [
-    "Cheerleader"
   ],
   "Of Monsters & Men": [
     "Little talks"
@@ -308,12 +308,18 @@
   "Panic!At the disco": [
     "This is gospel"
   ],
+  "Paramore": [
+    "Hard Times"
+  ],
   "Pep's": [
     "Liberta"
   ],
   "Pink Martini": [
     "Sympathique",
     "Donde estas Yolanda"
+  ],
+  "Portal": [
+    "Still alive"
   ],
   "Rolling Stones": [
     "Jumpin’ Jack Flash",
@@ -338,30 +344,24 @@
   "Slipknot": [
     "Snuff"
   ],
-  "Téléphone": [
-    "Cendrillon"
-  ],
   "Tessa Violet": [
     "Not Over You Sorry",
     "I 'm not sorry"
   ],
-  "Tété": [
-    "A la faveur de l'automne"
-  ],
   "The Animals": [
     "House of the Rising Sun"
-  ],
-  "The Proclaimers": [
-    "I'm gonna be (500 miles)"
   ],
   "The Last of Us": [
     "Through the Valley"
   ],
-  "The verve": [
-    "Bitter Sweet Symphony"
+  "The Proclaimers": [
+    "I'm gonna be (500 miles)"
   ],
   "The White Stripes": [
     "Seven Nation Army"
+  ],
+  "The verve": [
+    "Bitter Sweet Symphony"
   ],
   "Thomas Dutronc": [
     "J'me fous de tout",
@@ -392,6 +392,12 @@
   ],
   "Tyler Ward": [
     "Hanging tree"
+  ],
+  "Téléphone": [
+    "Cendrillon"
+  ],
+  "Tété": [
+    "A la faveur de l'automne"
   ],
   "VARIOUS ARTIST": [
     "Diga Diga Doo",
