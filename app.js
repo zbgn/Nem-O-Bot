@@ -172,7 +172,8 @@ var checkCommand = function (msg, isMention) {
   var command = ''
   console.log(msg.channel.name)
   if (msg.channel.name !== 'nem-o-bot') {
-    bot.message.guild.channels.find('name', 'nem-o-bot').sendMessage('@' + msg.author.username + ' Please send your message here')
+    console.log('@' + msg.author.username + ' Please send your message here')
+    // bot.channels.get('434050681582780436').sendMessage('@' + msg.author.username + ' Please send your message here')
   }
   if (isMention) {
     command = msg.content.split(' ')[1]
@@ -207,7 +208,7 @@ bot.setInterval(() => {
       var jsonres = JSON.parse(body)
       if (jsonres.data.length && !bot.liveDisplayed) {
         bot.liveDisplayed = true
-        // bot.message.guild.channels.find('name', 'annonces-streams').sendMessage('@everyone, @Minstery just went live! <http://twitch.tv/minestry>')
+        // bot.channels.get('371755760037658625').sendMessage('@everyone, @Minstery just went live! <http://twitch.tv/minestry>')
       } else if (!jsonres.data.length) bot.liveDisplayed = false
     } else {
       console.log('error ' + response.statusCode)
