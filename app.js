@@ -264,7 +264,7 @@ client.on('chat', (channel, userstate, message, self) => {
     var cmd = message.split(' ')[0].replace('!', '')
     if (cmd.toLowerCase() in cmdTV) {
       var msg = message.replace(message.split(' ')[0], '').split('-')
-      cmdTV[cmd](channel, userstate['display-name'], msg, (ret) => {
+      cmdTV[cmd.toLowerCase()](channel, userstate['display-name'], msg, (ret) => {
         client.say(channel, ret)
       })
     } else console.log(cmd + ':unknow cmd.')
