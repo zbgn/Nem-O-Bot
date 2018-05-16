@@ -28,7 +28,7 @@
     "Let it Be",
     "Help!"
   ],
-  "Ben l 'Oncle Soul": [
+  "Ben l'Oncle Soul": [
     "Soulman"
   ],
   "Bigflo et Oli": [
@@ -47,10 +47,14 @@
     "Don't worry be happy"
   ],
   "Boulevard des Airs": [
+    "Quiero Soñar",
     "Bla bla bla",
-    "Je m’ excuse pas",
+    "J’nous imagine",
+    "On se regarde",
+    "Je m’excuse pas",
     "Cielo Ciego",
-    "San Clemente"
+    "San Clemente",
+    "Paris Corbeil"
   ],
   "Brother Bear": [
     "On my way"
@@ -72,7 +76,7 @@
     "Whole Wide World",
     "Cold cold cold",
     "Trouble",
-    "Ain 't no rest for the wicked",
+    "Ain't no rest for the wicked",
     "Too late to say goodbye"
   ],
   "Camilla Cabello": [
@@ -108,6 +112,9 @@
   "Dionysos": [
     "Song for a jedi"
   ],
+  "Disclosure": [
+    "Omen"
+  ],
   "Dodie Clark": [
     "Would you be so kind ?",
     "Intertwined",
@@ -126,6 +133,7 @@
     "The A team",
     "Drunk",
     "Give me love",
+    "You need me, I don’t need you",
     "Shape Of You",
     "Castle on the hill"
   ],
@@ -173,17 +181,17 @@
     "Believer"
   ],
   "Indochine": [
-    "J 'ai demandé à la lune"
+    "J'ai demandé à la lune"
   ],
-  "Israel \"IZ\"Kamakawiwoʻole": [
+  "Israel \"IZ\" Kamakawiwoʻole": [
     "Over the rainbow / What a wonderful world"
   ],
   "Jason Mraz": [
-    "I won 't give up",
-    "I 'm yours",
+    "I won't give up",
+    "I'm yours",
     "Lucky"
   ],
-  "Jean-Louis Haubert": [
+  "Jean-Louis Aubert": [
     "Demain sera parfait"
   ],
   "Jeff Buckley": [
@@ -226,7 +234,7 @@
     "City of stars"
   ],
   "Les Aristochats": [
-    "Tout le monde veut devenir un chat"
+    "Tout le monde veut devenir un cat"
   ],
   "Linkin Park": [
     "Shadow of the Day",
@@ -259,7 +267,7 @@
     "Nuclear"
   ],
   "Minstery": [
-    "Living ghost",
+    "Living Ghost",
     "Stars"
   ],
   "Moana": [
@@ -289,9 +297,6 @@
   "Nirvana": [
     "Come as you are"
   ],
-  "OMI": [
-    "Cheerleader"
-  ],
   "Oasis": [
     "Wonderwall",
     "Don't look back in anger"
@@ -299,13 +304,16 @@
   "Of Monsters & Men": [
     "Little talks"
   ],
-  "Otis": [
-    "Redding (Sittin' on) the dock of the Bay"
+  "OMI": [
+    "Cheerleader"
+  ],
+  "Otis Redding": [
+    "(Sittin' on) the dock of the Bay"
   ],
   "Owl city": [
     "Fireflies"
   ],
-  "Panic!At the disco": [
+  "Panic! At the disco": [
     "This is gospel"
   ],
   "Paramore": [
@@ -319,7 +327,10 @@
     "Donde estas Yolanda"
   ],
   "Portal": [
-    "Still alive"
+    "Still Alive"
+  ],
+  "Portal 2": [
+    "Want you gone"
   ],
   "Rolling Stones": [
     "Jumpin’ Jack Flash",
@@ -334,8 +345,9 @@
     "Still loving you"
   ],
   "Shaka Ponk": [
-    "I 'm Picky",
+    "I'm Picky",
     "My name is Stain",
+    "Last Alone (-4)",
     "Mysterious Ways"
   ],
   "Skyrim": [
@@ -344,24 +356,48 @@
   "Slipknot": [
     "Snuff"
   ],
+  "Sting": [
+    "English man in New York"
+  ],
+  "Syd Matters": [
+    "Obstacles",
+    "To all of you"
+  ],
+  "Téléphone": [
+    "Cendrillon",
+    "New York avec toi"
+  ],
   "Tessa Violet": [
-    "Not Over You Sorry",
-    "I 'm not sorry"
+    "Not Over You",
+    "Sorry I'm not sorry",
+    "Make me a robot"
+  ],
+  "Tété": [
+    "A la faveur de l'automne"
   ],
   "The Animals": [
     "House of the Rising Sun"
   ],
-  "The Last of Us": [
+  "The Chainsmokers": [
+    "Don't let me down"
+  ],
+  "The Cramberries": [
+    "Zombie"
+  ],
+  "The Jackson 5": [
+    "I want you back"
+  ],
+  "The last of us": [
     "Through the Valley"
   ],
   "The Proclaimers": [
     "I'm gonna be (500 miles)"
   ],
+  "The Verve": [
+    "Bitter Sweet Symphony"
+  ],
   "The White Stripes": [
     "Seven Nation Army"
-  ],
-  "The verve": [
-    "Bitter Sweet Symphony"
   ],
   "Thomas Dutronc": [
     "J'me fous de tout",
@@ -384,7 +420,8 @@
     "Johnny boy",
     "Ms Believer",
     "House of Gold",
-    "Truce Trees",
+    "Truce",
+    "Trees",
     "Forest",
     "Polarize",
     "Hometown",
@@ -393,21 +430,15 @@
   "Tyler Ward": [
     "Hanging tree"
   ],
-  "Téléphone": [
-    "Cendrillon"
-  ],
-  "Tété": [
-    "A la faveur de l'automne"
-  ],
-  "VARIOUS ARTIST": [
-    "Diga Diga Doo",
-    "Bella ciao"
-  ],
   "Vance Joy": [
     "Riptide"
   ],
   "Vanessa Paradis": [
     "Il y a"
+  ],
+  "Various Artist": [
+    "Diga Diga Doo",
+    "Bella ciao"
   ],
   "Walk Off the Earth": [
     "Red Hands",
