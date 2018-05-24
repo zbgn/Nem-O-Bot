@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Nem'O Bot songlist</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<!--===============================================================================================-->
+	<script type="text/javascript">
+		function sortTable(n) {
+			var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+			table = document.getElementById("nemo-song-list");
+			switching = true;
+			// Set the sorting direction to ascending:
+			dir = "asc";
+			/* Make a loop that will continue until
+			no switching has been done: */
+			while (switching) {
+				// Start by saying: no switching is done:
+				switching = false;
+				rows = table.getElementsByTagName("TR");
+				/* Loop through all table rows (except the
+				first, which contains table headers): */
+				for (i = 1; i < (rows.length - 1); i++) {
+					// Start by saying there should be no switching:
+					shouldSwitch = false;
+					/* Get the two elements you want to compare,
+					one from current row and one from the next: */
+					x = rows[i].getElementsByTagName("TD")[n];
+					y = rows[i + 1].getElementsByTagName("TD")[n];
+					/* Check if the two rows should switch place,
+					based on the direction, asc or desc: */
+					if (dir == "asc") {
+						if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+							// If so, mark as a switch and break the loop:
+							shouldSwitch = true;
+							break;
+						}
+					} else if (dir == "desc") {
+						if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+							// If so, mark as a switch and break the loop:
+							shouldSwitch = true;
+							break;
+						}
+					}
+				}
+				if (shouldSwitch) {
+					/* If a switch has been marked, make the switch
+					and mark that a switch has been done: */
+					rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+					switching = true;
+					// Each time a switch is done, increase this count by 1:
+					switchcount++;
+				} else {
+					/* If no switching has been done AND the direction is "asc",
+					set the direction to "desc" and run the while loop again. */
+					if (switchcount == 0 && dir == "asc") {
+						dir = "desc";
+						switching = true;
+					}
+				}
+			}
+		}
+
+		function buildHtmlTable(sl_head, sl_body) {
+			var xmlhttp = new XMLHttpRequest();
+			xmlhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					var jsonObj = JSON.parse(this.responseText);
+					var songlist = jsonObj.songlist;
+					var columns = addAllColumnHeaders(songlist, sl_head);
+					for (var i = 0; i < songlist.length; i++) {
+						var row$ = $('<tr/>');
+						for (var colIndex = 0; colIndex < columns.length; colIndex++) {
+							var cellValue = songlist[i][columns[colIndex]];
+							if (cellValue === true) cellValue = "✔";
+							else if (cellValue === false) cellValue = "✘";
+							else if (cellValue === -1) cellValue = "already played";
+							else if (cellValue === null) cellValue = "";
+							row$.append($('<td/>').addClass('column' + (colIndex + 1)).html(cellValue));
+						}
+						$(sl_body).append(row$);
+					}
+				}
+			};
+			xmlhttp.open("GET", "/songlist.json", true);
+			xmlhttp.send();
+		}
+
+		// Adds a header row to the table and returns the set of columns.
+		// Need to do union of keys from all records as some records may not contain
+		// all records.
+		function addAllColumnHeaders(myList, sl_head) {
+			var columnSet = [];
+			var headerTr$ = $('<tr/>').addClass('table100-head');
+
+			for (var i = 0; i < myList.length; i++) {
+				var rowHash = myList[i];
+				for (var key in rowHash) {
+					if ($.inArray(key, columnSet) == -1) {
+						if (key == 'username') continue;
+						else {
+							columnSet.push(key);
+							var th$ = $('<th/>').addClass('column' + columnSet.length).html(key)
+							th$.onclick = function() {
+								sortTable(columnSet.length);
+							};
+							headerTr$.append(th$);
+						}
+					}
+				}
+			}
+			// $(sl_head).append(headerTr$);
+
+			return columnSet;
+		}
+	</script>
+</head>
+
+<body onLoad="buildHtmlTable('#sl-head', '#sl-body')">
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100">
+					<h1 style="text-align: center;color: #FFF">Nem'O Bot songlist</h1>
+					<table id="nemo-song-list">
+						<thead id="sl-head">
+							<tr class="table100-head">
+								<th class="column1" onclick="sortTable(0)">Song</th>
+								<th class="column2" onclick="sortTable(1)">Author</th>
+								<th class="column3" onclick="sortTable(2)">Played</th>
+								<th class="column4" onclick="sortTable(3)">Now Playing</th>
+								<th class="column5" onclick="sortTable(4)">Requests number</th>
+								<th class="column6" onclick="sortTable(5)">Disabled</th>
+							</tr>
+						</thead>
+						<tbody id="sl-body"></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+</body>
+
+</html>

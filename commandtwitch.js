@@ -137,6 +137,11 @@ function nem(channel, user, msg, next) {
   else next('@' + user + ' is a nem. minsteDerp')
 }
 
+function listsong(channel, user, msg, next) {
+  if (msg[0]) next('@' + msg[0].trim() + ' You can find the list of song here: http://nemo.zbgn.fr')
+  else next('@' + user + ' You can find the list of song here: http://nemo.zbgn.fr')
+}
+
 function currentsong(channel, user, msg, next) {
   fs.readFile('./songlist.json', (err, data) => {
     if (!err) {
@@ -187,5 +192,8 @@ module.exports = {
   nem: nem,
   currentsong: currentsong,
   cs: currentsong,
-  disable: disable
+  disable: disable,
+  d: disable,
+  listsong: listsong,
+  ls: listsong
 }
