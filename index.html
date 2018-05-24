@@ -98,7 +98,7 @@
 					}
 				}
 			};
-			xmlhttp.open("GET", "/songlist.json", true);
+			xmlhttp.open("GET", "/songlist.json?v="+(Date.now()).toString(), true);
 			xmlhttp.send();
 		}
 
