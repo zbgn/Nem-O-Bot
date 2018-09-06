@@ -5,6 +5,8 @@ const Discord = require('discord.js')
 const path = require('path')
 const fs = require('fs')
 var raven = require('raven')
+var schedule = require('node-schedule')
+var gsjson = require('google-spreadsheet-to-json')
 
 raven.config('https://6b2c5a567e1b4c488d8ac5489d585268@sentry.io/1200092').install()
 
@@ -156,6 +158,33 @@ commands.reload.main = function (bot, msg) {
     bot.sendNotification('You do not have permission to use this command.', 'error', msg)
   }
 }
+
+var updateSonglist = schedule.scheduleJob('0 12 * * *', () => {
+  gsjson({
+    spreadsheetId: '1rQaOF0xNWiL57OWbyp4vVX_kJAKD8DhghO7q7czBNOM',
+    credentials: config.Google.path,
+    listOnly: true
+  }).then((result) => {
+    let ans = {}
+    result.forEach(function (value) {
+      if (!value[0]) {
+        value[0] = 'Various Artist'
+      }
+      if (typeof ans[value[0]] === 'undefined') {
+        ans[value[0]] = []
+      }
+      ans[value[0]].push(value[1])
+    })
+    console.log(ans)
+    fs.writeFile('./utils/musicstream.json', JSON.stringify(ans, null, 4), (err) => {
+      if (err) console.log(err)
+      console.log('Musics have been updated.')
+    })
+  }).catch((err) => {
+    console.log(err.message)
+    console.log(err.stack)
+  })
+})
 
 var loadCommands = function () {
   var files = fs.readdirSync(path.join(__dirname, '/commands'))

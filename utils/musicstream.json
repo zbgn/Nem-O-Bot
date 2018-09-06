@@ -1,468 +1,502 @@
 {
-  "A-ha": [
-    "Take on me"
-  ],
-  "Alestorm": [
-    "Nancy the tavern wench"
-  ],
-  "Amy McDonald": [
-    "This is the life"
-  ],
-  "Angus & Julia Stone": [
-    "Santa Monica Dream"
-  ],
-  "Anna Kendrick": [
-    "Cups (When I'm Gone)"
-  ],
-  "Artic Monkeys": [
-    "Do I wanna know ?"
-  ],
-  "Avicii": [
-    "Wake me up"
-  ],
-  "Bastille": [
-    "Pompeii"
-  ],
-  "BB Brunes": [
-    "Dis moi"
-  ],
-  "Beatles": [
-    "Hey Jude",
-    "Let it Be",
-    "Help!"
-  ],
-  "Ben l'Oncle Soul": [
-    "Soulman"
-  ],
-  "Bigflo et Oli": [
-    "Dommage"
-  ],
-  "Blue Fondation": [
-    "Eyes on Fire"
-  ],
-  "Blues Brothers": [
-    "Sweet Home Chicago"
-  ],
-  "Bob Marley": [
-    "Redemption Song"
-  ],
-  "Boby Mc Ferrin": [
-    "Don't worry be happy"
-  ],
-  "Boulevard des Airs": [
-    "Quiero Soñar",
-    "Bla bla bla",
-    "J’nous imagine",
-    "On se regarde",
-    "Je m’excuse pas",
-    "Cielo Ciego",
-    "Demain de bon matin",
-    "Ce gamin-là",
-    "Laissez faire",
-    "San Clemente",
-    "Paris Corbeil"
-  ],
-  "Brother Bear": [
-    "On my way"
-  ],
-  "Bruno Mars": [
-    "The Lazy Song"
-  ],
-  "Bry": [
-    "Astronauts",
-    "You’re alright",
-    "Care",
-    "Pieces",
-    "Disarm",
-    "Adventure time"
-  ],
-  "Cage the Elephant": [
-    "Cigarette Daydreams",
-    "Back against the wall",
-    "Whole Wide World",
-    "Cold cold cold",
-    "Trouble",
-    "Ain't no rest for the wicked",
-    "Too late to say goodbye"
-  ],
-  "Camilla Cabello": [
-    "Havana"
-  ],
-  "Cavetown": [
-    "This is home",
-    "Lemon boy"
-  ],
-  "Cecilia Krull": [
-    "My life is going on"
-  ],
-  "Charlie Winston": [
-    "Like a hobo",
-    "I love your smile",
-    "Kick the bucket"
-  ],
-  "Chris Isaac": [
-    "Wicked Game"
-  ],
-  "Cocoon": [
-    "Chupee"
-  ],
-  "Coeur de pirate": [
-    "Comme des enfants"
-  ],
-  "Coldplay": [
-    "The scientist"
-  ],
-  "Dean Martin": [
-    "La vie en rose"
-  ],
-  "Dionysos": [
-    "Song for a jedi"
-  ],
-  "Disclosure": [
-    "Omen"
-  ],
-  "Dodie Clark": [
-    "Would you be so kind ?",
-    "Intertwined",
-    "In the middle",
-    "Adored by him",
-    "6/10",
-    "Permanent hug from you"
-  ],
-  "Dolly Parton": [
-    "Jolene"
-  ],
-  "Eagles": [
-    "Hotel California"
-  ],
-  "Ed Sheeran": [
-    "The A team",
-    "Drunk",
-    "Give me love",
-    "You need me, I don’t need you",
-    "Shape Of You",
-    "Castle on the hill"
-  ],
-  "Elvis Presley": [
-    "Can't Help Falling in Love With You"
-  ],
-  "Far Cry 5": [
-    "Oh the bliss",
-    "Help me faith",
-    "Build a castle",
-    "Now he's our father"
-  ],
-  "Florent Dorin": [
-    "A little bit longer"
-  ],
-  "Foster the People": [
-    "Pumped up kicks"
-  ],
-  "Frank Sinatra": [
-    "Fly me to the moon"
-  ],
-  "Game of Thrones": [
-    "Rains of castamere"
-  ],
-  "Gary Jules": [
-    "Mad World"
-  ],
-  "Gorillaz": [
-    "Feel Good Inc."
-  ],
-  "Guns & Roses": [
-    "Knockin' on Heaven's door"
-  ],
-  "Henri Salvador": [
-    "Le loup, la biche et le chevalier"
-  ],
-  "Hobbit": [
-    "Far over the misty mountains"
-  ],
-  "Hunger Games": [
-    "Hanging tree"
-  ],
-  "Imagine Dragons": [
-    "Radioactive",
-    "Believer"
-  ],
-  "Indochine": [
-    "J'ai demandé à la lune"
-  ],
-  "Israel \"IZ\" Kamakawiwoʻole": [
-    "Over the rainbow / What a wonderful world"
-  ],
-  "Jason Mraz": [
-    "I won't give up",
-    "I'm yours",
-    "Lucky"
-  ],
-  "Jean-Louis Aubert": [
-    "Demain sera parfait"
-  ],
-  "Jeff Buckley": [
-    "Hallellujah"
-  ],
-  "Joan Jett & the Blackhearts": [
-    "I love Rock'n'Roll"
-  ],
-  "John Lennon": [
-    "Imagine"
-  ],
-  "Johnny Cash": [
-    "Hurt"
-  ],
-  "Jon Bellion": [
-    "All time low"
-  ],
-  "Jonas Brothers": [
-    "Lovebug"
-  ],
-  "Julie Andrews": [
-    "My favorite things"
-  ],
-  "Jungle Book": [
-    "I wanna be like you"
-  ],
-  "Juno": [
-    "All I want is you"
-  ],
-  "Kygo": [
-    "Stay"
-  ],
-  "Kyo": [
-    "Dernière danse"
-  ],
-  "La belle et la bête": [
-    "L'histoire éternelle"
-  ],
-  "La la land": [
-    "City of stars"
-  ],
-  "Les Aristochats": [
-    "Tout le monde veut devenir un cat"
-  ],
-  "Linkin Park": [
-    "Shadow of the Day",
-    "The Messenger"
-  ],
-  "Louis Amstrong": [
-    "Dream a little dream of me"
-  ],
-  "Lumineers": [
-    "Ho Hey",
-    "Submarines"
-  ],
-  "M": [
-    "Le Baptême"
-  ],
-  "Mary Amato": [
-    "Guilty",
-    "Lucky me"
-  ],
-  "Maxime Le Forrestier": [
-    "San Francisco"
-  ],
-  "Megan Trainor": [
-    "All about that bass"
-  ],
-  "Mickael Miro": [
-    "L'horloge tourne"
-  ],
-  "Mike Oldfield": [
-    "Nuclear"
-  ],
-  "Minstery": [
-    "Living Ghost",
-    "Stars"
-  ],
-  "Moana": [
-    "How far I'll go",
-    "Shiny",
-    "You're welcome"
-  ],
-  "Mokotz": [
-    "La complainte du Nolife"
-  ],
-  "Muse": [
-    "Feeling Good"
-  ],
-  "My Chemical Romance": [
-    "Cancer"
-  ],
-  "Nancy Sinatra": [
-    "Bang Bang",
-    "These boots are made for walking"
-  ],
-  "Neil Diamond": [
-    "Sweet Caroline"
-  ],
-  "Nino Ferrer": [
-    "Le Sud"
-  ],
-  "Nirvana": [
-    "Come as you are"
-  ],
-  "Oasis": [
-    "Wonderwall",
-    "Don't look back in anger"
-  ],
-  "Of Monsters & Men": [
-    "Little talks"
-  ],
-  "OMI": [
-    "Cheerleader"
-  ],
-  "Otis Redding": [
-    "(Sittin' on) the dock of the Bay"
-  ],
-  "Owl city": [
-    "Fireflies"
-  ],
-  "Panic! At the disco": [
-    "This is gospel"
-  ],
-  "Paramore": [
-    "Hard Times"
-  ],
-  "Pep's": [
-    "Liberta"
-  ],
-  "Pink Martini": [
-    "Sympathique",
-    "Donde estas Yolanda"
-  ],
-  "Portal": [
-    "Still Alive"
-  ],
-  "Portal 2": [
-    "Want you gone"
-  ],
-  "Rolling Stones": [
-    "Jumpin’ Jack Flash",
-    "Satisfaction",
-    "You can’t always get what you want",
-    "Angie"
-  ],
-  "Saez": [
-    "Jeune et con"
-  ],
-  "Scorpion": [
-    "Still loving you"
-  ],
-  "Shaka Ponk": [
-    "I'm Picky",
-    "My name is Stain",
-    "Last Alone (-4)",
-    "Mysterious Ways"
-  ],
-  "Skip the use": [
-    "Ghost"
-  ],
-  "Skyrim": [
-    "The Dragonborn comes"
-  ],
-  "Slipknot": [
-    "Snuff"
-  ],
-  "Sting": [
-    "English man in New York"
-  ],
-  "Syd Matters": [
-    "Obstacles",
-    "To all of you"
-  ],
-  "Téléphone": [
-    "Cendrillon",
-    "New York avec toi"
-  ],
-  "Tessa Violet": [
-    "Not Over You",
-    "Sorry I'm not sorry",
-    "Make me a robot"
-  ],
-  "Tété": [
-    "A la faveur de l'automne"
-  ],
-  "The Animals": [
-    "House of the Rising Sun"
-  ],
-  "The Chainsmokers": [
-    "Don't let me down"
-  ],
-  "The Cramberries": [
-    "Zombie"
-  ],
-  "The Jackson 5": [
-    "I want you back"
-  ],
-  "The last of us": [
-    "Through the Valley"
-  ],
-  "The Proclaimers": [
-    "I'm gonna be (500 miles)"
-  ],
-  "The Verve": [
-    "Bitter Sweet Symphony"
-  ],
-  "The White Stripes": [
-    "Seven Nation Army"
-  ],
-  "Thomas Dutronc": [
-    "J'me fous de tout",
-    "Sac Ado"
-  ],
-  "Train": [
-    "Hey Soul Sister"
-  ],
-  "Tryo": [
-    "Serre-moi",
-    "La Main verte",
-    "Ladilafé",
-    "Désolé pour hier soir",
-    "L’hymne de nos campagnes"
-  ],
-  "Twenty One Pilots": [
-    "We don’t believe what’s on TV",
-    "Stressed Out",
-    "Tear in my heart",
-    "Johnny boy",
-    "Ms Believer",
-    "House of Gold",
-    "Truce",
-    "Trees",
-    "Forest",
-    "Polarize",
-    "Hometown",
-    "Heathens"
-  ],
-  "Tyler Ward": [
-    "Hanging tree"
-  ],
-  "Vance Joy": [
-    "Riptide"
-  ],
-  "Vanessa Paradis": [
-    "Il y a"
-  ],
-  "Various Artist": [
-    "Diga Diga Doo",
-    "Bella ciao"
-  ],
-  "Walk Off the Earth": [
-    "Red Hands",
-    "Summer Vibe"
-  ],
-  "Walk the moon": [
-    "Shut up and dance"
-  ],
-  "We came as Romans": [
-    "Fade Away"
-  ],
-  "Weezer": [
-    "Island in the sun"
-  ],
-  "Woodlock": [
-    "Lemons"
-  ]
+    "Alestorm": [
+        "Nancy the tavern wench"
+    ],
+    "Anna Kendrick": [
+        "Cups (When I'm Gone)"
+    ],
+    "Angus & Julia Stone": [
+        "Santa Monica Dream"
+    ],
+    "Amy McDonald": [
+        "This is the life"
+    ],
+    "The Animals": [
+        "House of the Rising Sun"
+    ],
+    "Artic Monkeys": [
+        "Do I wanna know ?"
+    ],
+    "Avicii": [
+        "Wake me up"
+    ],
+    "Bastille": [
+        "Pompeii"
+    ],
+    "BB Brunes": [
+        "Dis moi"
+    ],
+    "Beatles": [
+        "Hey Jude",
+        "Let it Be",
+        "Help!",
+        "Norwegian wood",
+        "All you need is love",
+        "A hard day's night",
+        "Dear Prudence"
+    ],
+    "Beatles ": [
+        "Come Together",
+        "Get back"
+    ],
+    "Ben l'Oncle Soul": [
+        "Soulman"
+    ],
+    "Bigflo et Oli": [
+        "Dommage"
+    ],
+    "Blue Fondation": [
+        "Eyes on Fire"
+    ],
+    "Blues Brothers": [
+        "Sweet Home Chicago"
+    ],
+    "Bob Marley": [
+        "Redemption Song"
+    ],
+    "Boby Mc Ferrin": [
+        "Don't worry be happy"
+    ],
+    "Boulevard des Airs": [
+        "Quiero Soñar",
+        "Bla bla bla",
+        "J’nous imagine",
+        "On se regarde",
+        "Je m’excuse pas",
+        "Cielo Ciego",
+        "Demain de bon matin",
+        "Ce gamin-là",
+        "Laissez faire",
+        "San Clemente",
+        "Paris Corbeil"
+    ],
+    "Brother Bear": [
+        "On my way"
+    ],
+    "Bruno Mars": [
+        "The Lazy Song"
+    ],
+    "Bry": [
+        "Astronauts",
+        "You’re alright",
+        "Care",
+        "Pieces",
+        "Disarm",
+        "Adventure time"
+    ],
+    "Cage the Elephant": [
+        "Cigarette Daydreams",
+        "Back against the wall",
+        "Whole Wide World",
+        "Cold cold cold",
+        "Trouble",
+        "Too late to say goodbye"
+    ],
+    "Camilla Cabello": [
+        "Havana"
+    ],
+    "Cavetown": [
+        "This is home",
+        "Lemon boy"
+    ],
+    "The Chainsmokers": [
+        "Don't let me down"
+    ],
+    "Charlie Winston": [
+        "Like a hobo",
+        "I love your smile"
+    ],
+    "Chris Isaac": [
+        "Wicked Game"
+    ],
+    "Cecilia Krull": [
+        "My life is going on"
+    ],
+    "Cocoon": [
+        "Chupee"
+    ],
+    "Coeur de pirate": [
+        "Comme des enfants"
+    ],
+    "Coldplay": [
+        "The scientist"
+    ],
+    "The Cramberries": [
+        "Zombie"
+    ],
+    "Dean Martin": [
+        "La vie en rose"
+    ],
+    "Dionysos": [
+        "Song for a jedi"
+    ],
+    "Dodie Clark": [
+        "Would you be so kind ?",
+        "Intertwined",
+        "In the middle",
+        "Adored by him",
+        43379,
+        "Permanent hug from you"
+    ],
+    "Dolly Parton": [
+        "Jolene"
+    ],
+    "The Doors": [
+        "Riders on the storm"
+    ],
+    "Eagles": [
+        "Hotel California"
+    ],
+    "Ed Sheeran": [
+        "The A team",
+        "Drunk",
+        "Give me love",
+        "Shape Of You",
+        "Castle on the hill"
+    ],
+    "Elvis Presley": [
+        "Can't Help Falling in Love With You"
+    ],
+    "Far Cry 5": [
+        "Oh the bliss",
+        "Help me faith",
+        "Build a castle",
+        "Now he's our father",
+        "Oh John",
+        "We will rise again"
+    ],
+    "Florent Dorin": [
+        " A little bit longer"
+    ],
+    "Frank Sinatra": [
+        "Fly me to the moon"
+    ],
+    "Foster the People": [
+        "Pumped up kicks"
+    ],
+    "Game of Thrones": [
+        "Rains of castamere"
+    ],
+    "Gary Jules": [
+        "Mad World"
+    ],
+    "Gorillaz": [
+        "Feel good inc"
+    ],
+    "Guns & Roses": [
+        "Knockin' on Heaven's door"
+    ],
+    "Henri Salvador": [
+        "Le loup, la biche et le chevalier"
+    ],
+    "Hunger Games": [
+        "Hanging tree "
+    ],
+    "Hobbit": [
+        "Far over the misty mountains"
+    ],
+    "Imagine Dragons": [
+        "Radioactive",
+        "Warriors",
+        "Warriors"
+    ],
+    "Indochine": [
+        "J'ai demandé à la lune"
+    ],
+    "Israel \"IZ\" Kamakawiwoʻole": [
+        "Over the rainbow / What a wonderful world"
+    ],
+    "Jason Mraz": [
+        "I won't give up",
+        "I'm yours",
+        "Lucky"
+    ],
+    "Jean-Louis Aubert": [
+        "Demain sera parfait"
+    ],
+    "Jeff Buckley": [
+        "Hallellujah"
+    ],
+    "Joan Jett & the Blackhearts": [
+        "I love Rock'n'Roll"
+    ],
+    "John Lennon": [
+        "Imagine"
+    ],
+    "Johnny Cash": [
+        "Hurt"
+    ],
+    "Jon Bellion": [
+        "All time low"
+    ],
+    "Jonas Brothers": [
+        "Lovebug"
+    ],
+    "Julie Andrews": [
+        "My favorite things"
+    ],
+    "Jungle Book": [
+        "I wanna be like you"
+    ],
+    "Juno": [
+        "All I want is you"
+    ],
+    "Kodaline": [
+        "The Answer"
+    ],
+    "Kygo": [
+        "Stay"
+    ],
+    "Kyo": [
+        "Dernière danse"
+    ],
+    "La belle et la bête": [
+        "L'histoire éternelle"
+    ],
+    "La la land": [
+        "City of stars"
+    ],
+    "Les Aristochats": [
+        "Tout le monde veut devenir un cat"
+    ],
+    "Linkin Park": [
+        "Shadow of the Day",
+        "The Messenger"
+    ],
+    "Louis Amstrong": [
+        "Dream a little dream of me"
+    ],
+    "Lumineers": [
+        "Ho Hey",
+        "Submarines"
+    ],
+    "M": [
+        "Le Baptême"
+    ],
+    "Mary Amato": [
+        "Guilty",
+        "Lucky me"
+    ],
+    "Mat Bastard": [
+        "Stand as one"
+    ],
+    "Maxime Le Forrestier": [
+        "San Francisco"
+    ],
+    "Metallica": [
+        "Nothing else matters"
+    ],
+    "Mickael Miro": [
+        "L'horloge tourne"
+    ],
+    "Minstery": [
+        "Living Ghost",
+        "Stars"
+    ],
+    "Megan Trainor": [
+        "All about that bass"
+    ],
+    "Mike Oldfield": [
+        "Nuclear"
+    ],
+    "Muse": [
+        "Feeling Good"
+    ],
+    "Moana": [
+        "How far I'll go",
+        "Shiny"
+    ],
+    "Mokotz": [
+        "La complainte du Nolife"
+    ],
+    "My Chemical Romance": [
+        "Cancer"
+    ],
+    "Nena": [
+        "99 red balloons"
+    ],
+    "Neil Diamond": [
+        "Sweet Caroline"
+    ],
+    "Nirvana": [
+        "Come as you are"
+    ],
+    "Nancy Sinatra": [
+        "Bang Bang",
+        "These boots are made for walking"
+    ],
+    "Nino Ferrer": [
+        "Le Sud"
+    ],
+    "Oasis": [
+        "Wonderwall",
+        "Don't look back in anger"
+    ],
+    "Of Monsters & Men": [
+        "Little talks"
+    ],
+    "OMI": [
+        "Cheerleader"
+    ],
+    "Otis Redding": [
+        "(Sittin' on) the dock of the Bay"
+    ],
+    "Owl city": [
+        "Fireflies"
+    ],
+    "Panic! At the disco": [
+        "This is gospel"
+    ],
+    "Paramore": [
+        "Hard Times"
+    ],
+    "Pep's ": [
+        "Liberta"
+    ],
+    "Pink Martini": [
+        "Sympathique",
+        "Donde estas Yolanda"
+    ],
+    "Pomme": [
+        "Pauline",
+        "Ceux qui rêvent",
+        "On brûlera"
+    ],
+    "Portal": [
+        "Still Alive"
+    ],
+    "The Proclaimers": [
+        "I'm gonna be (500 miles)"
+    ],
+    "Ray Charles": [
+        "Hit the road jack"
+    ],
+    "Rolling Stones": [
+        "Jumpin’ Jack Flash",
+        "Satisfaction",
+        "Get off of my cloud",
+        "You can’t always get what you want",
+        "Angie"
+    ],
+    "Saez": [
+        "Jeune et con"
+    ],
+    "Scorpion": [
+        "Still loving you"
+    ],
+    "Scott McKenzie": [
+        "San Francisco"
+    ],
+    "Shaka Ponk": [
+        "I'm Picky",
+        "My name is Stain",
+        "Mysterious Ways"
+    ],
+    "Simple Minds": [
+        "Don't you (forget about me)"
+    ],
+    "Skip the use": [
+        "Ghost"
+    ],
+    "Skyrim": [
+        "The Dragonborn comes"
+    ],
+    "Slipknot": [
+        "Snuff"
+    ],
+    "Sting": [
+        "English man in New York"
+    ],
+    "Syd Matters": [
+        "Obstacles",
+        "To all of you"
+    ],
+    "Téléphone": [
+        "Cendrillon",
+        "New York avec toi"
+    ],
+    "Tété": [
+        "A la faveur de l'automne"
+    ],
+    "Tessa Violet": [
+        "Not Over You",
+        "Sorry I'm not sorry",
+        "Crush",
+        "Make me a robot"
+    ],
+    "The last of us 2": [
+        "Through the Valley"
+    ],
+    "The last of us 2 ": [
+        "Wayfaring Stranger"
+    ],
+    "The Verve": [
+        "Bitter Sweet Symphony"
+    ],
+    "Thomas Dutronc": [
+        "J'me fous de tout",
+        "Sac Ado"
+    ],
+    "Train": [
+        "Hey Soul Sister"
+    ],
+    "Tryo": [
+        "Serre-moi",
+        "La Main verte",
+        "Ladilafé",
+        "Désolé pour hier soir",
+        "L’hymne de nos campagnes"
+    ],
+    "Twenty One Pilots": [
+        "We don’t believe what’s on TV",
+        "Stressed Out",
+        "Nico and the niners",
+        "Tear in my heart",
+        "Johnny boy",
+        "Ms Believer",
+        "House of Gold",
+        "Truce",
+        "Trees",
+        "Forest",
+        "Polarize",
+        "Hometown",
+        "Heathens"
+    ],
+    "Txenty One Pilots": [
+        "Jumpsuit"
+    ],
+    "Tyler Ward": [
+        "Hanging tree"
+    ],
+    "Vance Joy": [
+        "Riptide"
+    ],
+    "Vanessa Paradis": [
+        "Il y a"
+    ],
+    "Walk Off the Earth": [
+        "Red Hands",
+        "Summer Vibe"
+    ],
+    "Walk the moon": [
+        "Shut up and dance"
+    ],
+    "Weezer": [
+        "Island in the sun"
+    ],
+    "The White Stripes": [
+        "Seven Nation Army"
+    ],
+    "Woodlock ": [
+        "Lemons"
+    ],
+    "We came as Romans": [
+        "Fade Away"
+    ],
+    "Various Artist": [
+        "Diga Diga Doo",
+        "Bella ciao",
+        "Kokonut Song",
+        "The parting glass"
+    ]
 }
