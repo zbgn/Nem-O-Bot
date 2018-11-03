@@ -240,7 +240,8 @@ bot.setInterval(() => {
         // bot.channels.get('371755760037658625').sendMessage('@everyone, @Minstery just went live! <http://twitch.tv/minestry>')
       } else if (!jsonres.data.length) bot.liveDisplayed = false
     } else {
-      console.log('error ' + response.statusCode)
+      if (response != undefined) console.log('error ' + response.statusCode)
+      else console.log("unknown error")
     }
   })
 }, 120000)
