@@ -1,4 +1,7 @@
 {
+    "A-ha": [
+        "Take on me"
+    ],
     "Alestorm": [
         "Nancy the tavern wench"
     ],
@@ -31,13 +34,11 @@
         "Let it Be",
         "Help!",
         "Norwegian wood",
+        "Come Together",
         "All you need is love",
+        "Get back",
         "A hard day's night",
         "Dear Prudence"
-    ],
-    "Beatles ": [
-        "Come Together",
-        "Get back"
     ],
     "Ben l'Oncle Soul": [
         "Soulman"
@@ -135,6 +136,7 @@
         "Intertwined",
         "In the middle",
         "Adored by him",
+        "My face",
         43379,
         "Permanent hug from you"
     ],
@@ -153,6 +155,9 @@
         "Give me love",
         "Shape Of You",
         "Castle on the hill"
+    ],
+    "Elle King": [
+        "Ex's and oh's"
     ],
     "Elvis Presley": [
         "Can't Help Falling in Love With You"
@@ -259,9 +264,21 @@
     "Les Aristochats": [
         "Tout le monde veut devenir un cat"
     ],
+    "Le livre de la jungle": [
+        "Un homme comme vous"
+    ],
+    "Le Roi lion": [
+        "Je voudrais déjà être roi"
+    ],
+    "Lion King": [
+        "I just can't wait to be king"
+    ],
     "Linkin Park": [
         "Shadow of the Day",
         "The Messenger"
+    ],
+    "Little Mermaid": [
+        "Under the sea"
     ],
     "Louis Amstrong": [
         "Dream a little dream of me"
@@ -350,7 +367,7 @@
     "Paramore": [
         "Hard Times"
     ],
-    "Pep's ": [
+    "Pep's": [
         "Liberta"
     ],
     "Pink Martini": [
@@ -370,6 +387,9 @@
     ],
     "Ray Charles": [
         "Hit the road jack"
+    ],
+    "Red Hot Chilli Peppers": [
+        "Road Trippin'"
     ],
     "Rolling Stones": [
         "Jumpin’ Jack Flash",
@@ -404,6 +424,9 @@
     "Slipknot": [
         "Snuff"
     ],
+    "Speedy Ortiz": [
+        "No Below"
+    ],
     "Sting": [
         "English man in New York"
     ],
@@ -425,9 +448,7 @@
         "Make me a robot"
     ],
     "The last of us 2": [
-        "Through the Valley"
-    ],
-    "The last of us 2 ": [
+        "Through the Valley",
         "Wayfaring Stranger"
     ],
     "The Verve": [
@@ -450,6 +471,7 @@
     "Twenty One Pilots": [
         "We don’t believe what’s on TV",
         "Stressed Out",
+        "Jumpsuit",
         "Nico and the niners",
         "Tear in my heart",
         "Johnny boy",
@@ -461,9 +483,6 @@
         "Polarize",
         "Hometown",
         "Heathens"
-    ],
-    "Txenty One Pilots": [
-        "Jumpsuit"
     ],
     "Tyler Ward": [
         "Hanging tree"
@@ -487,7 +506,7 @@
     "The White Stripes": [
         "Seven Nation Army"
     ],
-    "Woodlock ": [
+    "Woodlock": [
         "Lemons"
     ],
     "We came as Romans": [

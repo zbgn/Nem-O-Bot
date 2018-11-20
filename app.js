@@ -159,17 +159,19 @@ commands.reload.main = function (bot, msg) {
   }
 }
 
-var updateSonglist = schedule.scheduleJob('0 12 * * *', () => {
+var updaterSonglist = function () {
   gsjson({
     spreadsheetId: '1rQaOF0xNWiL57OWbyp4vVX_kJAKD8DhghO7q7czBNOM',
     credentials: config.Google.path,
-    listOnly: true
+    listOnly: true,
+    includeHeader: true
   }).then((result) => {
     let ans = {}
     result.forEach(function (value) {
       if (!value[0]) {
         value[0] = 'Various Artist'
       }
+      value[0] = value[0].trim()
       if (typeof ans[value[0]] === 'undefined') {
         ans[value[0]] = []
       }
@@ -184,7 +186,9 @@ var updateSonglist = schedule.scheduleJob('0 12 * * *', () => {
     console.log(err.message)
     console.log(err.stack)
   })
-})
+}
+
+var updateSonglist = schedule.scheduleJob('0 12 * * *', updaterSonglist())
 
 var loadCommands = function () {
   var files = fs.readdirSync(path.join(__dirname, '/commands'))
@@ -295,6 +299,8 @@ client.on('chat', (channel, userstate, message, self) => {
     var cmd = message.split(' ')[0].replace('!', '')
     if ((cmd.toLowerCase() === 'cs' || cmd.toLowerCase() === 'currentsong') && Date.now() - timer <= 10000) {
       console.log('TIMER')
+    } else if (cmd.toLowerCase() === 'update') {
+      updaterSonglist() 
     } else if (cmd.toLowerCase() in cmdTV) {
       if (cmd.toLowerCase() === 'cs' || cmd.toLowerCase() === 'currentsong') timer = Date.now()
       var msg = message.replace(message.split(' ')[0], '').split('-')

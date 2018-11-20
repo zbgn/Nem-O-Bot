@@ -58,9 +58,9 @@ function updateJSON(user, author, music, jsonf, disable) {
 
 function songrequester(channel, user, msg, next) {
   fs.readFile('./songlist.json', (err, data) => {
-    if (!err && msg.length === 2) {
+    if (!err) {
       var jsonf = JSON.parse(data)
-      utils.getSong(msg[0].trim(), msg[1].trim(), (author, music) => {
+      utils.getSong(msg[0].trim(), msg.slice(1).join('-').trim(), (author, music) => {
         if (author) {
           var updatedString = updateJSON(user, author, music, jsonf, false)
           fs.writeFile('./songlist.json', JSON.stringify(jsonf), (err) => {
