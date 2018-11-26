@@ -188,7 +188,7 @@ var updaterSonglist = function () {
   })
 }
 
-var updateSonglist = schedule.scheduleJob('0 12 * * *', updaterSonglist())
+var updateSonglist = schedule.scheduleJob('0 12 * * *', () => {updaterSonglist()})
 
 var loadCommands = function () {
   var files = fs.readdirSync(path.join(__dirname, '/commands'))
