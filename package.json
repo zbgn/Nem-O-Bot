@@ -31,7 +31,7 @@
     "nodemon": "^1.18.5",
     "raven": "^2.6.0",
     "request": "^2.88.0",
-    "string-similarity": "^2.0.0",
+    "string-similarity": "^3.0.0",
     "twitch-js": "^2.0.0-alpha.18"
   }
 }
