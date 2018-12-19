@@ -175,6 +175,9 @@ var updaterSonglist = function () {
       if (typeof ans[value[0]] === 'undefined') {
         ans[value[0]] = []
       }
+      if (value[1] === 43379) {
+        value[1] = '6/10'
+      }
       ans[value[0]].push(value[1])
     })
     console.log(ans)
@@ -300,7 +303,8 @@ client.on('chat', (channel, userstate, message, self) => {
     if ((cmd.toLowerCase() === 'cs' || cmd.toLowerCase() === 'currentsong') && Date.now() - timer <= 10000) {
       console.log('TIMER')
     } else if (cmd.toLowerCase() === 'update') {
-      updaterSonglist() 
+      updaterSonglist()
+      client.say(channel, 'Updating songlist.')
     } else if (cmd.toLowerCase() in cmdTV) {
       if (cmd.toLowerCase() === 'cs' || cmd.toLowerCase() === 'currentsong') timer = Date.now()
       var msg = message.replace(message.split(' ')[0], '').split('-')
