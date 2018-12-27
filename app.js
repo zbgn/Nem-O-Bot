@@ -173,12 +173,12 @@ var updaterSonglist = function () {
       }
       value[0] = value[0].trim()
       if (typeof ans[value[0]] === 'undefined') {
-        ans[value[0]] = []
+        ans[value[0].toLowerCase()] = []
       }
       if (value[1] === 43379) {
         value[1] = '6/10'
       }
-      ans[value[0]].push(value[1])
+      ans[value[0].toLowerCase()].push(value[1].toLowerCase())
     })
     console.log(ans)
     fs.writeFile('./utils/musicstream.json', JSON.stringify(ans, null, 4), (err) => {

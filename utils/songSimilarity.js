@@ -4,7 +4,7 @@ const fs = require('fs')
 
 module.exports = {
   getSong: (song, artist, next) => {
-    var songlist = fs.readFileSync('./utils/musicstream.json', 'utf-8')
+    var songlist = JSON.parse(fs.readFileSync('./utils/musicstream.json', 'utf-8'))
     var author = ss.findBestMatch(String(artist), Object.keys(songlist)).bestMatch
     if (author.rating >= 0.8) {
         var music = ss.findBestMatch(String(song), songlist[author.target]).bestMatch
