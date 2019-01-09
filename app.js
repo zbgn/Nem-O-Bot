@@ -171,14 +171,14 @@ var updaterSonglist = function () {
       if (!value[0]) {
         value[0] = 'Various Artist'
       }
-      value[0] = value[0].trim()
+      value = value.map(function(v) { return String(v).trim().toLowerCase();} )
       if (typeof ans[value[0]] === 'undefined') {
-        ans[value[0].toLowerCase()] = []
+        ans[value[0]] = []
       }
-      if (value[1] === 43379) {
+      if (value[1] === '43379') {
         value[1] = '6/10'
       }
-      ans[value[0].toLowerCase()].push(value[1].toLowerCase())
+      ans[value[0]].push(value[1])
     })
     console.log(ans)
     fs.writeFile('./utils/musicstream.json', JSON.stringify(ans, null, 4), (err) => {
