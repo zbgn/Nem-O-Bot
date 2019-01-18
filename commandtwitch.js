@@ -234,9 +234,10 @@ function nem(channel, user, msg, next) {
  * @param {CallableFunction} next
  */
 function listsong(channel, user, msg, next) {
-  const reply = ' You can find the list of song here: http://nemo.zbgn.fr';
-  if (msg[0]) next('@' + msg[0].trim() + reply);
-  else next('@' + user + reply);
+  const reply = ' You can find the list of song here: http://nemo.zbgn.fr/';
+  const query = '?channel=' + channel.substr(1);
+  if (msg[0]) next('@' + msg[0].trim() + reply + query);
+  else next('@' + user + reply + query);
 }
 
 /**
