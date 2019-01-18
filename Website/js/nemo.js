@@ -75,30 +75,33 @@ function buildHtmlTable(slHead, slBody) {
       const jsonObj = JSON.parse(this.responseText);
       const urlParams = new URLSearchParams(window.location.search);
       const channelName = urlParams.get('channel');
-      const songlist = jsonObj['#' + channelName.toLowerCase()];
-      if (songlist) {
-        const columns = addAllColumnHeaders(songlist, slHead);
-        $(slBody).empty();
-        for (let i = 0; i < songlist.length; i++) {
-          const row$ = $('<tr/>');
-          for (let colIndex = 0; colIndex < columns.length; colIndex++) {
-            let cellValue = songlist[i][columns[colIndex]];
-            if (cellValue === true) cellValue = '✔';
-            else if (cellValue === false) cellValue = '✘';
-            else if (cellValue === -1) cellValue = 'already played';
-            else if (cellValue === null) cellValue = '';
-            row$.append($('<td/>')
-                .addClass('column' + (colIndex + 1))
-                .html(cellValue));
-          }
-          $(slBody).append(row$);
-          document.getElementById('nemo-song-list').style.display = '';
-          snackbar.innerHTML = 'Displaying ' + channelName
+      if (channelName) {
+        const songlist = jsonObj['#' + channelName.toLowerCase()];
+        if (songlist) {
+          const columns = addAllColumnHeaders(songlist, slHead);
+          $(slBody).empty();
+          for (let i = 0; i < songlist.length; i++) {
+            const row$ = $('<tr/>');
+            for (let colIndex = 0; colIndex < columns.length; colIndex++) {
+              let cellValue = songlist[i][columns[colIndex]];
+              if (cellValue === true) cellValue = '✔';
+              else if (cellValue === false) cellValue = '✘';
+              else if (cellValue === -1) cellValue = 'already played';
+              else if (cellValue === null) cellValue = '';
+              row$.append($('<td/>')
+                  .addClass('column' + (colIndex + 1))
+                  .html(cellValue));
+            }
+            $(slBody).append(row$);
+            document.getElementById('nemo-song-list').style.display = '';
+            snackbar.innerHTML = 'Displaying ' + channelName
                         + '\'s music request queue';
-        }
-      } else {
-        snackbar.innerHTML = channelName + '\'s music request queue not found.'
+          }
+        } else {
+          snackbar.innerHTML = channelName
+                    + '\'s music request queue not found.'
                     + '<br> Search another name.';
+        }
       }
       snackbar.className = 'show';
       setTimeout(() => {
