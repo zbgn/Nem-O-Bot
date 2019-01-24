@@ -21,7 +21,7 @@ function isAdmin(user, channel) {
  *
  * @return {Number}
  */
-function getCurrent(jsonf) {
+function getCurrent(channel, jsonf) {
   let index = 0;
   if (jsonf[channel].length === 0) return -1;
   for (let i = 0; i < jsonf[channel].length; i++) {
@@ -40,7 +40,7 @@ function getCurrent(jsonf) {
 function getMostRequested(channel, jsonf, isReg) {
   let index = 0;
   if (jsonf[channel].length === 0) return -1;
-  jsonf[channel][getCurrent(jsonf)].current = isReg;
+  jsonf[channel][getCurrent(channel, jsonf)].current = isReg;
   for (let i = 0; i < jsonf[channel].length; i++) {
     if (!jsonf[channel][i].played && !jsonf[channel][i].disable
       && jsonf[channel][index].requests < jsonf[channel][i].requests) index = i;
@@ -145,9 +145,9 @@ function songrequester(channel, user, msg, next) {
  * @param {Boolean} isReg
  * @param {CallableFunction} next
  */
-function getrequest(user, data, isReg, next) {
+function getrequest(channel, user, data, isReg, next) {
   const jsonf = JSON.parse(data);
-  const song = getMostRequested(jsonf, isReg);
+  const song = getMostRequested(channel, jsonf, isReg);
   if (song === -1) return;
   const songDisplay = jsonf[channel][song];
   fs.writeFile('./songlist.json', JSON.stringify(jsonf), (err) => {
@@ -183,9 +183,9 @@ function nextsong(channel, user, msg, next) {
       //   })
       // }, 1800000)
       if (isAdmin(user, channel)) {
-        getrequest(user, data, false, next);
+        getrequest(channel, user, data, false, next);
       } else {
-        getrequest(user, data, true, next);
+        getrequest(channel, user, data, true, next);
       }
     } else console.log(err);
   });
@@ -251,7 +251,7 @@ function currentsong(channel, user, msg, next) {
   fs.readFile('./songlist.json', (err, data) => {
     if (!err) {
       const jsonf = JSON.parse(data);
-      const i = getCurrent(jsonf);
+      const i = getCurrent(channel, jsonf);
       if (i >= 0) {
         const music = jsonf[channel][i];
         next('@' + user + ' the current song is: ' + music.song

@@ -11,6 +11,7 @@ module.exports = {
         String(artist),
         Object.keys(songlist)
     ).bestMatch;
+    console.log(author);
     if (author.rating < 0.8) {
       const swap = song;
       song = artist;
