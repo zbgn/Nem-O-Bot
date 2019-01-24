@@ -1,1 +1,84 @@
-{"#minstery":[{"username":["Minstery"],"song":"dear prudence","author":"beatles","played":false,"current":true,"requests":1,"disable":false},{"username":["Gysco"],"song":"snuff","author":"slipknot","played":false,"current":false,"requests":1,"disable":false},{"username":["Serafo4421"],"song":"nancy the tavern wench","author":"alestorm","played":false,"current":false,"requests":1,"disable":false},{"username":["Gysco","OfficialAlan85"],"song":"far over the misty mountains","author":"hobbit","played":false,"current":false,"requests":2,"disable":false},{"username":["jesaispas3_"],"song":"dommage","author":"bigflo et oli","played":false,"current":false,"requests":1,"disable":false},{"username":["shunske1452"],"song":"Heathens","author":"Twenty One Pilots","played":false,"current":false,"requests":1,"disable":false},{"username":["PetiTrolI"],"song":"Hotel California","author":"Eagles","played":false,"current":false,"requests":1,"disable":false},{"username":["Omega_SKY360"],"song":"Radioactive","author":"Imagine Dragons","played":false,"current":false,"requests":1,"disable":false},{"username":["Gysco"],"song":"radioactive","author":"imagine dragons","played":false,"current":false,"requests":1,"disable":false}]}
+{
+    "#minstery": [{
+        "username": ["Minstery"],
+        "song": "dear prudence",
+        "author": "beatles",
+        "played": false,
+        "current": true,
+        "requests": 1,
+        "disable": false
+    }, {
+        "username": ["Gysco"],
+        "song": "snuff",
+        "author": "slipknot",
+        "played": false,
+        "current": false,
+        "requests": 1,
+        "disable": false
+    }, {
+        "username": ["Serafo4421"],
+        "song": "nancy the tavern wench",
+        "author": "alestorm",
+        "played": false,
+        "current": false,
+        "requests": 1,
+        "disable": false
+    }, {
+        "username": ["Gysco", "OfficialAlan85"],
+        "song": "far over the misty mountains",
+        "author": "hobbit",
+        "played": false,
+        "current": false,
+        "requests": 2,
+        "disable": false
+    }, {
+        "username": ["jesaispas3_"],
+        "song": "dommage",
+        "author": "bigflo et oli",
+        "played": false,
+        "current": false,
+        "requests": 1,
+        "disable": false
+    }, {
+        "username": ["shunske1452"],
+        "song": "Heathens",
+        "author": "Twenty One Pilots",
+        "played": false,
+        "current": false,
+        "requests": 1,
+        "disable": false
+    }, {
+        "username": ["PetiTrolI"],
+        "song": "Hotel California",
+        "author": "Eagles",
+        "played": false,
+        "current": false,
+        "requests": 1,
+        "disable": false
+    }, {
+        "username": ["Omega_SKY360"],
+        "song": "Radioactive",
+        "author": "Imagine Dragons",
+        "played": false,
+        "current": false,
+        "requests": 1,
+        "disable": false
+    }, {
+        "username": ["Gysco"],
+        "song": "radioactive",
+        "author": "imagine dragons",
+        "played": false,
+        "current": false,
+        "requests": 1,
+        "disable": false
+    }],
+    "#playmore_tv": [{
+        "username": ["Gysco"],
+        "song": "je voudrais déjà être roi",
+        "author": "le roi lion",
+        "played": false,
+        "current": false,
+        "requests": 1,
+        "disable": false
+    }]
+}

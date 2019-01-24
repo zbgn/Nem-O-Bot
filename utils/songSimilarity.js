@@ -4,6 +4,8 @@ const fs = require('fs');
 
 module.exports = {
   getSong: (song, artist, next) => {
+    song = song.toLowerCase();
+    artist = artist.toLowerCase();
     const songlist = JSON.parse(
         fs.readFileSync('./utils/musicstream.json', 'utf-8')
     );
