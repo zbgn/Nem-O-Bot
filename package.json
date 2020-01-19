@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/Gysco/Nem-O-Bot#readme",
   "dependencies": {
-    "@hapi/hoek": "^8.0.2",
+    "@hapi/hoek": "^9.0.0",
     "discord.js": "^11.3.2",
     "google-spreadsheet": "^2.0.6",
     "google-spreadsheet-to-json": "^1.0.0",
